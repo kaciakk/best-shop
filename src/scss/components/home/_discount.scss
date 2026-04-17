@@ -1,0 +1,41 @@
+.discount {
+  margin-bottom: 6rem;
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: red;
+    background-image: url("/src/assets/Homepage/discount-banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    color: white;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+  &__percent {
+    font-size: 150px;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+  &__button {
+    min-width: 174px;
+    min-height: 60px;
+  }
+}

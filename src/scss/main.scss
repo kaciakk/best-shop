@@ -1,0 +1,27 @@
+@use "abstracts/mixins";
+
+@use "base/fonts";
+@use "base/base";
+
+@use "layouts/container";
+@use "layouts/header";
+@use "layouts/footer";
+@use "layouts/benefits";
+
+@use "components/shared/buttons";
+@use "components/shared/travel";
+@use "components/shared/products";
+
+@use "components/home/discount";
+@use "components/home/hero";
+@use "components/home/reviews";
+@use "components/home/promotion";
+
+@use "components/about/arrivals";
+@use "components/about/hero-about";
+@use "components/about/highlights";
+@use "components/about/team";
+
+@use "components/contact/hero-contact";
+@use "components/contact/information";
+@use "components/contact/feedback";

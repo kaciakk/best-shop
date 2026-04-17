@@ -1,0 +1,25 @@
+.hero {
+  background-color: #e7e8e9;
+  min-height: 850px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+  }
+
+  &__left {
+  }
+  &__right {
+  }
+
+  &__button {
+    min-width: 174px;
+    min-height: 60px;
+  }
+
+  &__description {
+    color: #504e4a;
+  }
+}

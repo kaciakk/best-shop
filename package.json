@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo \"Dummy build script required for Autocode Compile\"",
-    "ts-compile": "npx tsc"
-
+    "ts-compile": "npx tsc",
+    "ts": "tsc --watch",
+    "scss": "sass --watch src/scss:dist/css",
+    "serve": "live-server .",
+    "dev": "concurrently \"npm run ts\" \"npm run scss\" \"npm run serve\""
   },
   "repository": {
     "type": "git",
@@ -18,6 +21,9 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "concurrently": "^9.2.1",
+    "live-server": "^1.2.2",
+    "sass": "^1.99.0",
     "typescript": "^6.0.2"
   }
 }
