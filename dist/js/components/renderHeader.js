@@ -22,17 +22,17 @@ export function renderHeader() {
               </svg>
             </a>
           </div>
-          <a href="#" class="header__logo">
+          <a href="/src" class="header__logo">
             <img src="/src/assets/icons/logo.png" class="header__logo-icon" />
             <div class="header__logo-text">BEST SHOP</div>
           </a>
           <div class="header__controls">
-            <a href="#" class="header__control">
+            <a href="#" class="header__action">
               <svg class="header__action-icon header__action-icon--lg">
                 <use href="/src/assets/icons/icons.svg#icon-user"></use>
               </svg>
             </a>
-            <a href="#" class="header__control">
+            <a href="/src/html/cart.html" class="header__action">
               <svg class="header__action-icon header__action-icon--lg">
                 <use href="/src/assets/icons/icons.svg#icon-cart"></use>
               </svg>

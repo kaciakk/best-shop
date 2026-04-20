@@ -1,0 +1,19 @@
+.travel-products {
+  margin-bottom: 6rem;
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+  &__tiles {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}

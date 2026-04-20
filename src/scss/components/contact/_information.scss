@@ -1,8 +1,10 @@
+@use "../../abstracts/colors" as *;
+
 .information {
   margin-bottom: 6rem;
   &__content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
   &__tile {
@@ -11,20 +13,19 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    width: 100%;
+    max-width: 220px;
   }
   &__icon {
-    background-color: #b92770;
-    color: white;
+    background-color: $color-primary;
+    color: $color-white;
     width: 65px;
     height: 60px;
     padding: 0.2rem;
   }
-  &__title {
-    font-weight: 700;
-  }
+
   &__description {
-    word-break: break-word;
     text-align: center;
+    display: flex;
+    flex-direction: column;
   }
 }

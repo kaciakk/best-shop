@@ -1,0 +1,27 @@
+$color-black: #000;
+$color-white: #fff;
+$color-primary: #b92770;
+$color-secondary: #504e4a;
+$color-grey-light: #e9e9ed;
+
+$color-backgorund: $color-primary;
+$color-backgorund-secondary: $color-secondary;
+
+$color-border-primary: $color-primary;
+$color-border-secondary: $color-secondary;
+
+$color-text-primary: $color-primary;
+$color-text-secondary: $color-secondary;
+$color-text-inverse: $color-white;
+$color-text-basic: $color-black;
+$color-text-muted: $color-grey-light;
+
+$color-input-border: $color-grey-light;
+$color-input-text: $color-text-secondary;
+$color-input-background: $color-white;
+
+$color-button-text: $color-white;
+$color-button-text-inverse: $color-primary;
+$color-button-background: $color-primary;
+$color-button-background-inverse: $color-white;
+$color-button-border: $color-primary;

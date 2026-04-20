@@ -1,28 +1,22 @@
+@use "../abstracts/colors" as *;
+
 body {
   margin: 0;
 }
-h1 {
-  font-size: 50px;
-  font-weight: 900;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
   margin: 0;
-}
-h2 {
-  font-size: 40px;
-  margin: 0;
-  font-weight: 900;
+  padding: 0;
 }
 
-h3 {
-  font-size: 30px;
-  margin: 0;
-}
-
-h4 {
-  font-size: 25px;
-  margin: 0;
-}
-h5 {
-  font-size: 17px;
-  font-weight: 400;
-  margin: 0;
+a {
+  text-decoration: none;
+  color: $color-text-basic;
 }

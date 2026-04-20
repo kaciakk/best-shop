@@ -1,0 +1,17 @@
+@use "../../../abstracts/colors" as *;
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-button-text;
+  background-color: $color-button-background;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 24px;
+
+  &--inverse {
+    background-color: $color-button-background-inverse;
+    color: $color-button-text-inverse;
+  }
+}

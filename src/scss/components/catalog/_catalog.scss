@@ -1,0 +1,40 @@
+.catalog {
+  &__content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+  }
+  &__left {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+  &__sets {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  &__set {
+    display: flex;
+    gap: 1rem;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__image {
+    max-width: 100px;
+    width: 100%;
+    aspect-ratio: 1;
+  }
+  &__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -9,6 +9,46 @@
   <body>
     <header id="header" class="header"></header>
     <main>
+      <section class="search-bar">
+        <div class="container">
+          <div class="search-bar__content">
+            <div class="search-bar__left">
+              <div>Showing 1-12 Of 15 Results</div>
+              <div
+                class="search-bar__input-field search-bar__input-field--sorting"
+              >
+                <svg class="search-bar__icon">
+                  <use href="/src/assets/icons/icons.svg#icon-search"></use>
+                </svg>
+                <input
+                  class="input search-bar__input"
+                  placeholder="Default Sorting"
+                />
+              </div>
+            </div>
+            <div class="search-bar__input-field">
+              <svg class="search-bar__icon">
+                <use href="/src/assets/icons/icons.svg#icon-search"></use>
+              </svg>
+              <input
+                class="input search-bar__input"
+                placeholder="Search Models"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="catalog">
+        <div class="container">
+          <div class="catalog__content">
+            <div id="catalog__left" class="catalog__left"></div>
+            <div id="catalog__right" class="catalog__right">
+              <h5>Top Best Sets</h5>
+              <div id="catalog__sets" class="catalog__sets"></div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="benefits" class="benefits"></section>
     </main>
     <footer id="footer" class="footer"></footer>

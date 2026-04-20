@@ -1,5 +1,8 @@
+@use "../../abstracts/colors" as *;
 .hero-contact {
-  background-image: url("../../src/assets/Contact/banner-image.jpg");
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../src/assets/Contact/banner-image.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -9,11 +12,14 @@
 
   &__content {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
-    color: white;
     height: 100%;
     gap: 2rem;
+  }
+  &__description {
+    max-width: 500px;
+    text-align: center;
   }
 }

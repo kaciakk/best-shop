@@ -1,0 +1,41 @@
+@use "../../abstracts/colors" as *;
+.cart-results {
+  margin-bottom: 6rem;
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  &__left {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  &__left button {
+    max-width: 270px;
+    max-height: 50px;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-backgorund-secondary;
+    padding: 2rem;
+  }
+  &__checkout {
+    display: flex;
+    flex-direction: column;
+  }
+  &__checkout-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-border-primary;
+    padding: 1rem 0;
+
+    &:last-child {
+      border: none;
+      margin-bottom: 1rem;
+    }
+  }
+  &__checkout-button {
+    width: 50%;
+  }
+}

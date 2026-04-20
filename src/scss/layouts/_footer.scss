@@ -1,3 +1,5 @@
+@use "../abstracts/colors" as *;
+
 .footer {
   margin-bottom: 6rem;
   &__content {
@@ -6,6 +8,7 @@
     grid-template-areas:
       "about links achievemetns . contact contact"
       "shipping shipping shipping . information1 information2";
+    gap: 2rem;
   }
   &__about {
     grid-area: about;
@@ -24,28 +27,34 @@
   }
   &__information-area1 {
     grid-area: information1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
   &__information-area2 {
     grid-area: information2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
   &__title {
-    font-size: 15px;
-    font-family: Helvetica, sans-serif;
-    font-weight: 700;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
   }
   &__items {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding-bottom: 2rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
+
   &__item {
-    font-size: 15px;
-    font-family: Helvetica, sans-serif;
-    font-weight: 400;
-  }
-  &__information {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -54,6 +63,10 @@
   &__icon {
     width: 20px;
     height: 20px;
-    color: #b92770;
+    color: $color-text-primary;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
   }
 }

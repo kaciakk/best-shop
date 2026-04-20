@@ -12,11 +12,17 @@
       <section class="hero-contact">
         <div class="container">
           <div class="hero-contact__content">
-            <h2>Contact Us</h2>
-            <h5>
-              Duis vestibulum elit vel neque pharetra vulputate. Duis rutrum non
-              risus in imperdiet.
-            </h5>
+            <h1
+              class="text-title text-title--xxl text-title--light text-title--bold"
+            >
+              Contact Us
+            </h1>
+            <div class="hero-contact__description">
+              <p class="text-body text-body--sm text-body--muted">
+                Duis vestibulum elit vel neque pharetra vulputate. Duis rutrum
+                non risus in imperdiet.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -27,35 +33,58 @@
               <svg class="information__icon">
                 <use href="/src/assets/icons/icons.svg#icon-address"></use>
               </svg>
-              <h5 class="information__title">Our Location</h5>
-              <h5 class="information__description">1234 NW Bobcat Lane, St.</h5>
-              <h5 class="information__description">Robert, MO 65584-5678</h5>
+              <h5 class="text-title text-title--md text-title--bold">
+                Our Location
+              </h5>
+              <div class="information__description">
+                <span class="text-body text-body--sm"
+                  >1234 NW Bobcat Lane, St.</span
+                >
+                <span class="text-body text-body--sm"
+                  >Robert, MO 65584-5678</span
+                >
+              </div>
             </div>
             <div class="information__tile">
               <svg class="information__icon">
                 <use href="/src/assets/icons/icons.svg#icon-clock"></use>
               </svg>
-              <h5 class="information__title">Operating Time</h5>
-              <h5 class="information__description">
-                Monday - Friday: 9am - 6 pm
+              <h5 class="text-title text-title--md text-title--bold">
+                Operating Time
               </h5>
-              <h5 class="information__description">Weekends: 10:30 am - 6pm</h5>
+              <div class="information__description">
+                <span class="text-body text-body--sm">
+                  Monday - Friday: 9am - 6 pm
+                </span>
+                <span class="text-body text-body--sm"
+                  >Weekends: 10:30 am - 6pm</span
+                >
+              </div>
             </div>
             <div class="information__tile">
               <svg class="information__icon">
                 <use href="/src/assets/icons/icons.svg#icon-mail"></use>
               </svg>
-              <h5 class="information__title">Our Email</h5>
-              <h5 class="information__description">best@shop.com</h5>
-              <h5 class="information__description">info@bestshop.com</h5>
+              <h5 class="text-title text-title--md text-title--bold">
+                Our Email
+              </h5>
+              <div class="information__description">
+                <span class="text-body text-body--sm">best@shop.com</span>
+                <span class="text-body text-body--sm">info@bestshop.com </span>
+              </div>
             </div>
+
             <div class="information__tile">
               <svg class="information__icon">
                 <use href="/src/assets/icons/icons.svg#icon-phone"></use>
               </svg>
-              <h5 class="information__title">Call Us</h5>
-              <h5 class="information__description">(268)142-8413</h5>
-              <h5 class="information__description">(760)265-2917</h5>
+              <h5 class="text-title text-title--md text-title--bold">
+                Call Us
+              </h5>
+              <div class="information__description">
+                <span class="text-body text-body--sm">(268)142-8413</span>
+                <span class="text-body text-body--sm">(760)265-2917</span>
+              </div>
             </div>
           </div>
         </div>
@@ -69,16 +98,59 @@
               </div>
             </div>
             <div class="feedback__right">
-              <h5>Your Feedback Is Much Appreciated!</h5>
-              <h5>We will contact you when you complete the following form!</h5>
-              <label>Your Name *</label>
-              <input placeholder="name" />
-              <label>Your Email Address *</label>
-              <input placeholder="name" />
-              <label>Topic *</label>
-              <input placeholder="name" />
-              <label>Your Message *</label>
-              <input placeholder="name" />
+              <div class="feedback__title">
+                <h4 class="text-title text-title--lg">
+                  Your Feedback Is Much Appreciated!
+                </h4>
+                <span class="text-body text-body--sm"
+                  >We will contact you when you complete the following
+                  form!</span
+                >
+              </div>
+              <form id="contact-form" class="feedback__form">
+                <div class="feedback__form-item">
+                  <label
+                    for="name"
+                    class="text-title text-title--sm text-title--bold feedback__is-required"
+                    >Your Name</label
+                  >
+                  <input type="text" id="name" class="input" required />
+                </div>
+                <div class="feedback__form-item">
+                  <label
+                    for="email"
+                    class="text-title text-title--sm text-title--bold feedback__is-required"
+                    >Your Email Address</label
+                  >
+                  <input type="email" id="email" class="input" required />
+                </div>
+                <div class="feedback__form-item">
+                  <label
+                    for="topic"
+                    class="text-title text-title--sm text-title--bold feedback__is-required"
+                    >Topic</label
+                  >
+                  <input type="text" id="topic" class="input" required />
+                </div>
+                <div class="feedback__form-item">
+                  <label
+                    for="message"
+                    class="text-title text-title--sm text-title--bold feedback__is-required"
+                    >Your Message</label
+                  >
+                  <textarea
+                    id="message"
+                    form="contact-form"
+                    class="input feedback__form-input-message"
+                    rows="8"
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="button feedback__button">
+                  Send
+                </button>
+              </form>
             </div>
           </div>
         </div>

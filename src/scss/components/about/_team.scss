@@ -1,3 +1,4 @@
+@use "../../abstracts/colors" as *;
 .team {
   margin-bottom: 6rem;
   &__content {
@@ -8,7 +9,7 @@
     gap: 2rem;
   }
   &__title {
-    border-bottom: 1px solid #b92770;
+    border-bottom: 2px solid $color-text-primary;
   }
   &__members {
     display: flex;
@@ -30,8 +31,5 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  &__name {
-    font-weight: 700;
   }
 }

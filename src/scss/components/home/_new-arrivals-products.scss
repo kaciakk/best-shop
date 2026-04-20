@@ -1,0 +1,17 @@
+.new-arrivals-products {
+  margin-bottom: 6rem;
+  &__content {
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+  &__tiles {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}

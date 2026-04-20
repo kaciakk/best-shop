@@ -1,21 +1,28 @@
 @use "abstracts/mixins";
+@use "abstracts/colors";
 
 @use "base/fonts";
 @use "base/base";
+@use "base/typhography";
 
 @use "layouts/container";
 @use "layouts/header";
 @use "layouts/footer";
 @use "layouts/benefits";
 
-@use "components/shared/buttons";
+@use "components/shared/forms/buttons";
+@use "components/shared/forms/input";
 @use "components/shared/travel";
 @use "components/shared/products";
+@use "components/shared/suitcaseTile";
+@use "components/shared/discount";
 
-@use "components/home/discount";
 @use "components/home/hero";
 @use "components/home/reviews";
 @use "components/home/promotion";
+@use "components/home/selected-products";
+@use "components/home/new-arrivals-products";
+@use "components/home/travel-products";
 
 @use "components/about/arrivals";
 @use "components/about/hero-about";
@@ -25,3 +32,14 @@
 @use "components/contact/hero-contact";
 @use "components/contact/information";
 @use "components/contact/feedback";
+
+@use "components/catalog/catalog";
+@use "components/catalog/search-bar";
+
+@use "components/product-card/product-card";
+@use "components/product-card/details";
+@use "components/product-card/prefer-list";
+
+@use "components/cart/cart";
+@use "components/cart/hero-cart";
+@use "components/cart/cart-results";

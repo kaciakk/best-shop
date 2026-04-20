@@ -1,0 +1,39 @@
+@use "../../abstracts/colors" as *;
+.suitcaseTile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  &__image {
+    width: 100%;
+    max-width: 290px;
+    aspect-ratio: 1/1.25;
+    overflow: hidden;
+    box-shadow:
+      5px 20px 20px rgba(39, 39, 39, 0.08),
+      8px 80px 20px rgba(157, 189, 178, 0.12);
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  &__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__title {
+    text-align: center;
+  }
+  &__sale {
+    background-color: $color-primary;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 5px 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+}

@@ -1,10 +1,145 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
     <title>Document</title>
+    <script type="module" src="../../dist/js/cart.js"></script>
+    <link rel="stylesheet" href="../../dist/css/main.css" />
   </head>
   <body>
-    <div>Cart</div>
+    <header id="header" class="header"></header>
+    <main>
+      <section class="hero-cart">
+        <div class="container">
+          <div class="hero-cart__content">
+            <h1
+              class="text-title text-title--xxl text-title--bold text-title--light"
+            >
+              My Cart
+            </h1>
+          </div>
+        </div>
+      </section>
+      <section class="cart">
+        <div class="container">
+          <div class="cart__content">
+            <table class="cart__table">
+              <thead class="cart__table-head">
+                <tr
+                  class="text-title text-title--sm text-title--bold text-title--light"
+                >
+                  <th class="cart__table-cell--head">IMAGE</th>
+                  <th class="cart__table-cell--head">PRODUCT NAME</th>
+                  <th class="cart__table-cell--head">PRICE</th>
+                  <th class="cart__table-cell--head">QUANTITY</th>
+                  <th class="cart__table-cell--head">TOTAL</th>
+                  <th class="cart__table-cell--head">DELETE</th>
+                </tr>
+              </thead>
+              <tbody id="cart-table-items">
+                <tr
+                  class="text-title text-title--sm text-title--bold cart__table-row"
+                >
+                  <td class="cart__table-cell">
+                    <div class="cart__image">
+                      <img src="../assets/Product-Card/suitcase-small-4.png" />
+                    </div>
+                  </td>
+                  <td class="cart__table-cell">Nomad Haven</td>
+                  <td class="cart__table-cell">$250</td>
+                  <td class="cart__table-cell">
+                    <div class="cart__buttons">
+                      <button class="button button--inverse">
+                        <span class="text-body text-body--md">&minus;</span>
+                      </button>
+                      <span class="text-body text-body--md">12</span
+                      ><button class="button button--inverse">
+                        <span class="text-body text-body--md">+</span>
+                      </button>
+                    </div>
+                  </td>
+                  <td class="cart__table-cell">$250</td>
+                  <td class="cart__table-cell">CION</td>
+                </tr>
+                <tr
+                  class="text-title text-title--sm text-title--bold cart__table-row"
+                >
+                  <td class="cart__table-cell">
+                    <div class="cart__image">
+                      <img src="../assets/Product-Card/suitcase-yellow.png" />
+                    </div>
+                  </td>
+                  <td class="cart__table-cell">Nomad Haven</td>
+                  <td class="cart__table-cell">$250</td>
+                  <td class="cart__table-cell">
+                    <div class="cart__buttons">
+                      <button class="button button--inverse">
+                        <span class="text-body text-body--md">&minus;</span>
+                      </button>
+                      <span class="text-body text-body--md">12</span
+                      ><button class="button button--inverse">
+                        <span class="text-body text-body--md">+</span>
+                      </button>
+                    </div>
+                  </td>
+                  <td class="cart__table-cell">$250</td>
+                  <td class="cart__table-cell">CION</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="cart-results">
+        <div class="container">
+          <div class="cart-results__content">
+            <div class="cart-results__left">
+              <button class="button">CONTINUE SHOPPING</button>
+              <button class="button">CLEAR SHOPPING CART</button>
+            </div>
+            <div class="cart-results__right">
+              <div class="cart-results__checkout">
+                <div class="cart-results__checkout-item">
+                  <span
+                    class="text-body text-body--sm text-body--bold text-body--light"
+                    >Sub Total</span
+                  >
+                  <span
+                    class="text-body text-body--sm text-body--bold text-body--light"
+                    >$1111</span
+                  >
+                </div>
+                <div class="cart-results__checkout-item">
+                  <span
+                    class="text-body text-body--sm text-body--bold text-body--light"
+                    >Shipping</span
+                  >
+                  <span
+                    class="text-body text-body--sm text-body--bold text-body--light"
+                    >$000</span
+                  >
+                </div>
+                <div class="cart-results__checkout-item">
+                  <span
+                    class="text-body text-body--md text-body--bold text-body--light"
+                    >Total</span
+                  >
+                  <span
+                    class="text-body text-body--md text-body--bold text-body--light"
+                    >$90439</span
+                  >
+                </div>
+              </div>
+
+              <button class="button cart-results__checkout-button">
+                CHECKOUT
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="benefits" class="benefits"></section>
+    </main>
+    <footer id="footer" class="footer"></footer>
   </body>
 </html>

@@ -1,0 +1,12 @@
+@use "../../../abstracts/colors" as *;
+.input {
+  border: 1px solid $color-input-border;
+  color: $color-input-text;
+  background-color: $color-input-background;
+  width: 100%;
+  padding: 10px 30px 10px 10px;
+
+  &::placeholder {
+    color: $color-input-text;
+  }
+}

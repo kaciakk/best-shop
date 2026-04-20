@@ -1,3 +1,5 @@
+@use "../abstracts/colors" as *;
+
 .header {
   &__content {
     display: flex;
@@ -12,16 +14,20 @@
   }
 
   &__action {
+    color: $color-text-primary;
   }
 
   &__action-icon {
     width: 25px;
     height: 20px;
-    color: black;
+    fill: $color-text-primary;
 
     &--lg {
       width: 35px;
       height: 35px;
+    }
+    &:hover {
+      color: $color-primary;
     }
   }
 
@@ -35,7 +41,7 @@
   }
 
   &__logo-icon {
-    background-color: #b92770;
+    background-color: $color-primary;
     border-radius: 10px;
     width: 35px;
     height: 35px;
@@ -43,7 +49,7 @@
   }
 
   &__logo-text {
-    color: #b92770;
+    color: $color-text-primary;
     font-weight: 700;
     font-size: 30px;
   }
@@ -57,6 +63,7 @@
 }
 
 .nav {
+  margin-bottom: 2rem;
   &__content {
     display: flex;
     align-items: center;
@@ -73,6 +80,9 @@
   }
   &__item-link {
     text-decoration: none;
-    color: black;
+    color: $color-text-primary;
+    &:hover {
+      color: $color-text-primary;
+    }
   }
 }

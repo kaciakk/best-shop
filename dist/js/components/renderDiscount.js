@@ -6,16 +6,16 @@ export function renderDiscount() {
   <div class="container">
           <div class="discount__content">
             <div class="discount__left">
-              <h2 class="discount__percent">50%</h2>
-              <h5>Curabitur vulputate arcu odio, ac facilisis diam.</h5>
+              <span class="text-body text-body--bold text-body--light discount__percent">50%</span>
+              <span class="text-body text-body--md text-body--light">Curabitur vulputate arcu odio, ac facilisis diam.</span>
             </div>
-            <div class="discount__right">
-              <h2 class="discount__title">Offer Of The Month</h2>
-              <h5 class="discount__description">
+            <div class="text-body text-body--bold discount__right">
+              <h2 class="text-title text-title--lg text-title--light text-title--bold">Offer Of The Month</h2>
+              <span class="text-body text-body--sm text-body--light">
                 Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut
                 imperdiet et leo in vulputate.
-              </h5>
-              <button class="discount__button">Get Offer Today</button>
+              </span>
+              <button class="button discount__button">Get Offer Today</button>
             </div>
           </div>
         </div>`;
