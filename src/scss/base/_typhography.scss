@@ -26,6 +26,9 @@
   &--bold {
     font-weight: 700;
   }
+  &--primary {
+    color: $color-text-primary;
+  }
 }
 .text-body {
   color: $color-text-basic;

@@ -22,7 +22,7 @@
       </section>
       <section class="cart">
         <div class="container">
-          <div class="cart__content">
+          <div id="cart-content" class="cart__content">
             <table class="cart__table">
               <thead class="cart__table-head">
                 <tr
@@ -36,56 +36,7 @@
                   <th class="cart__table-cell--head">DELETE</th>
                 </tr>
               </thead>
-              <tbody id="cart-table-items">
-                <tr
-                  class="text-title text-title--sm text-title--bold cart__table-row"
-                >
-                  <td class="cart__table-cell">
-                    <div class="cart__image">
-                      <img src="../assets/Product-Card/suitcase-small-4.png" />
-                    </div>
-                  </td>
-                  <td class="cart__table-cell">Nomad Haven</td>
-                  <td class="cart__table-cell">$250</td>
-                  <td class="cart__table-cell">
-                    <div class="cart__buttons">
-                      <button class="button button--inverse">
-                        <span class="text-body text-body--md">&minus;</span>
-                      </button>
-                      <span class="text-body text-body--md">12</span
-                      ><button class="button button--inverse">
-                        <span class="text-body text-body--md">+</span>
-                      </button>
-                    </div>
-                  </td>
-                  <td class="cart__table-cell">$250</td>
-                  <td class="cart__table-cell">CION</td>
-                </tr>
-                <tr
-                  class="text-title text-title--sm text-title--bold cart__table-row"
-                >
-                  <td class="cart__table-cell">
-                    <div class="cart__image">
-                      <img src="../assets/Product-Card/suitcase-yellow.png" />
-                    </div>
-                  </td>
-                  <td class="cart__table-cell">Nomad Haven</td>
-                  <td class="cart__table-cell">$250</td>
-                  <td class="cart__table-cell">
-                    <div class="cart__buttons">
-                      <button class="button button--inverse">
-                        <span class="text-body text-body--md">&minus;</span>
-                      </button>
-                      <span class="text-body text-body--md">12</span
-                      ><button class="button button--inverse">
-                        <span class="text-body text-body--md">+</span>
-                      </button>
-                    </div>
-                  </td>
-                  <td class="cart__table-cell">$250</td>
-                  <td class="cart__table-cell">CION</td>
-                </tr>
-              </tbody>
+              <tbody id="cart-table-items"></tbody>
             </table>
           </div>
         </div>
@@ -95,7 +46,9 @@
           <div class="cart-results__content">
             <div class="cart-results__left">
               <button class="button">CONTINUE SHOPPING</button>
-              <button class="button">CLEAR SHOPPING CART</button>
+              <button id="cart-button-clear" class="button">
+                CLEAR SHOPPING CART
+              </button>
             </div>
             <div class="cart-results__right">
               <div class="cart-results__checkout">
@@ -105,8 +58,20 @@
                     >Sub Total</span
                   >
                   <span
+                    id="cart-sub-total"
                     class="text-body text-body--sm text-body--bold text-body--light"
-                    >$1111</span
+                    >$0</span
+                  >
+                </div>
+                <div class="cart-results__checkout-item">
+                  <span
+                    class="text-body text-body--sm text-body--bold text-body--light"
+                    >Discount</span
+                  >
+                  <span
+                    id="cart-discount"
+                    class="text-body text-body--sm text-body--bold text-body--light"
+                    >$0</span
                   >
                 </div>
                 <div class="cart-results__checkout-item">
@@ -115,8 +80,9 @@
                     >Shipping</span
                   >
                   <span
+                    id="cart-shipping"
                     class="text-body text-body--sm text-body--bold text-body--light"
-                    >$000</span
+                    >$0</span
                   >
                 </div>
                 <div class="cart-results__checkout-item">
@@ -125,13 +91,17 @@
                     >Total</span
                   >
                   <span
+                    id="cart-total"
                     class="text-body text-body--md text-body--bold text-body--light"
-                    >$90439</span
+                    >$0</span
                   >
                 </div>
               </div>
 
-              <button class="button cart-results__checkout-button">
+              <button
+                id="cart-button-checkout"
+                class="button cart-results__checkout-button"
+              >
                 CHECKOUT
               </button>
             </div>
