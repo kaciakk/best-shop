@@ -1,18 +1,26 @@
 import { renderHeader } from "./components/renderHeader.js";
-import { renderFooter } from "./components/renderFooter.js";
-import { renderDiscount } from "./components/renderDiscount.js";
-import { renderBenefits } from "./components/renderBenefits.js";
+import { renderLayout } from "./components/renderLayout.js";
 import { getProducts } from "./api/getProducts.js";
+import { CART_CONFIG } from "./constants/cartConfig.js";
+import {
+  calculateDiscount,
+  calculateSubTotal,
+  calculateTotal,
+} from "./helpers/cartHelpers.js";
+import {
+  clearLocalStorageCart,
+  getLocalStorageCart,
+  setLocalStorageCart,
+} from "./store/cartStore.js";
+import { renderCartItem } from "./components/renderCartItem.js";
+
+let allProducts = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
-  renderHeader();
-  renderFooter();
-  renderDiscount();
-  renderBenefits();
+  renderLayout();
 
-  const products = await getProducts();
-  renderCartItem(products);
-  console.log(products);
+  allProducts = await getProducts();
+  renderCartItems(allProducts);
 });
 
 const cartEmpty = document.getElementById("cart-content");
@@ -21,73 +29,45 @@ const subTotal = document.getElementById("cart-sub-total");
 const total = document.getElementById("cart-total");
 const shipping = document.getElementById("cart-shipping");
 const discount = document.getElementById("cart-discount");
+const discountContainer = document.getElementById("cart-discount-container");
 
-let subTotalValue = 0;
-let shippingValue = 30;
-let totalValue = 0;
-let discountValue = 0;
-let discountStage = 3000;
-let discountPercentage = 0.1;
+function renderCartItems(products) {
+  const localStorageItems = getLocalStorageCart();
 
-function renderCartItem(products) {
-  const localStorageItems = JSON.parse(localStorage.getItem("cart")) || [];
-
-  const result = localStorageItems.map((res) => {
-    const cartIds = products.find((prod) => prod.id === res.storageId);
-    return { ...cartIds, quantity: res.quantity };
+  const cart = localStorageItems.map((cartItem) => {
+    const cartIds = products.find((prod) => prod.id === cartItem.id);
+    return { ...cartIds, quantity: cartItem.quantity };
   });
 
-  //Calculate Sub Value
-  subTotalValue = result.reduce((total, item) => {
-    return total + item.price * item.quantity;
-  }, 0);
+  const subTotalValue = calculateSubTotal(cart);
+  const discountValue = calculateDiscount(
+    subTotalValue,
+    CART_CONFIG.discountStage,
+    CART_CONFIG.discountPercentage,
+  );
+  const totalValue = calculateTotal(
+    subTotalValue,
+    discountValue,
+    CART_CONFIG.shipping,
+  );
 
-  //Calculate Discount Value
-  if (subTotalValue >= discountStage) {
-    discountValue = subTotalValue * discountPercentage;
+  if (discountValue >= 1) {
+    discountContainer?.classList.remove("cart-results__checkout-item--hide");
+    discount?.innerHTML = `$${discountValue}`;
+  } else {
+    discountContainer?.classList.add("cart-results__checkout-item--hide");
+    discount?.innerHTML = `$0`;
   }
 
-  //Calculate Total Value
-  totalValue = subTotalValue - discountValue + shippingValue;
-
   //Value assigne
-  shipping?.innerHTML = `$${shippingValue}`;
-  discount?.innerHTML = `$${discountValue}`;
+  shipping?.innerHTML = `$${CART_CONFIG.shipping}`;
   subTotal?.innerHTML = `$${subTotalValue}`;
   total?.innerHTML = `$${totalValue}`;
 
-  if (result.length > 0) {
-    cartItem.innerHTML = result
+  if (cart.length > 0) {
+    cartItem.innerHTML = cart
       .map((res) => {
-        const { id, name, price, imageUrl, quantity } = res;
-        return `
-          <tr class="text-title text-title--sm text-title--bold cart__table-row">
-            <td class="cart__table-cell">
-              <div class="cart__image">
-                <img src="${imageUrl}" alt="${name}" />
-              </div>
-            </td>
-            <td class="cart__table-cell">${name}</td>
-            <td class="cart__table-cell">$${price}</td>
-            <td class="cart__table-cell">
-              <div class="cart__buttons">
-                <button data-id="${id}" class="button button--inverse cart__quantity-sub-button">
-                  <span class="text-body text-body--md ">&minus;</span>
-                </button>
-                <span class="text-body text-body--md">${quantity}</span>
-                <button data-id="${id}" class="button button--inverse cart__quantity-add-button">
-                  <span class="text-body text-body--md">+</span>
-                </button>
-              </div>
-            </td>
-            <td class="cart__table-cell">$${price * quantity}</td>
-            <td class="cart__table-cell">
-              <svg data-id="${id}" class="cart__table-cell-icon">
-                <use href="/src/assets/icons/icons.svg#icon-delete"></use>
-              </svg>
-            </td>
-          </tr>
-        `;
+        return renderCartItem(res);
       })
       .join("");
   } else {
@@ -98,17 +78,19 @@ function renderCartItem(products) {
   }
 }
 
-//Event Clear Button
 const clearButtonCart = document.getElementById("cart-button-clear");
 clearButtonCart?.addEventListener("click", () => {
-  localStorage.removeItem("cart");
+  clearLocalStorageCart();
+  renderCartItems(allProducts);
+  renderHeader();
 });
 
-//Event Checkout Button
 const checkoutButtonCart = document.getElementById("cart-button-checkout");
 checkoutButtonCart?.addEventListener("click", () => {
-  //   localStorage.removeItem("cart");
+  clearLocalStorageCart();
   console.log("Thank you for your purchase.");
+  renderCartItems(allProducts);
+  renderHeader();
 });
 
 cartItem?.addEventListener("click", (e) => {
@@ -116,39 +98,45 @@ cartItem?.addEventListener("click", (e) => {
   const quantityAddButton = e.target.closest(".cart__quantity-add-button");
   const quantitySubButton = e.target.closest(".cart__quantity-sub-button");
 
-  const localStorageItems = JSON.parse(localStorage.getItem("cart"));
+  const localStorageItems = getLocalStorageCart();
 
   //Event remove item
   if (removeButton) {
     const idRemoveButton = removeButton.dataset.id;
     const updateCart = localStorageItems.filter(
-      (item) => item.storageId !== idRemoveButton,
+      (item) => item.id !== idRemoveButton,
     );
-    localStorage.setItem("cart", JSON.stringify(updateCart));
+    setLocalStorageCart(updateCart);
+    renderCartItems(allProducts);
+    renderHeader();
     return;
   }
   //Event addQuanity
   if (quantityAddButton) {
     const idQuantityAddButton = quantityAddButton.dataset.id;
     const updatedCart = localStorageItems.map((item) => {
-      if (item.storageId === idQuantityAddButton) {
+      if (item.id === idQuantityAddButton) {
         return { ...item, quantity: item.quantity + 1 };
       }
       return item;
     });
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setLocalStorageCart(updatedCart);
+    renderCartItems(allProducts);
+    renderHeader();
     return;
   }
   //Event subQuanity
   if (quantitySubButton) {
     const idQuantitySubButton = quantitySubButton.dataset.id;
     const updatedCart = localStorageItems.map((item) => {
-      if (item.storageId === idQuantitySubButton) {
+      if (item.id === idQuantitySubButton && item.quantity > 1) {
         return { ...item, quantity: item.quantity - 1 };
       }
       return item;
     });
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setLocalStorageCart(updatedCart);
+    renderCartItems(allProducts);
+    renderHeader();
     return;
   }
 });

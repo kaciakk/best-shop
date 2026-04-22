@@ -1,6 +1,10 @@
 @use "../abstracts/colors" as *;
 
 .header {
+  position: sticky;
+  top: 0;
+  background-color: $color-backgorund-light;
+  z-index: 1;
   &__content {
     display: flex;
     justify-content: space-between;
@@ -15,12 +19,13 @@
 
   &__action {
     color: $color-text-primary;
+    position: relative;
   }
 
   &__action-icon {
     width: 25px;
     height: 20px;
-    fill: $color-text-primary;
+    color: $color-text-basic;
 
     &--lg {
       width: 35px;
@@ -60,6 +65,22 @@
     align-items: center;
     gap: 1rem;
   }
+
+  &__cart-icon {
+    font-size: 12px;
+    font-weight: 900px;
+    position: absolute;
+    right: -13px;
+    top: -11px;
+    border: 2px solid;
+    border-radius: 100%;
+    width: 15px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+  }
 }
 
 .nav {
@@ -80,7 +101,7 @@
   }
   &__item-link {
     text-decoration: none;
-    color: $color-text-primary;
+    color: $color-text-basic;
     &:hover {
       color: $color-text-primary;
     }

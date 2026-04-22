@@ -14,16 +14,20 @@
           <div class="search-bar__content">
             <div class="search-bar__left">
               <div>Showing 1-12 Of 15 Results</div>
+
               <div
                 class="search-bar__input-field search-bar__input-field--sorting"
               >
-                <svg class="search-bar__icon">
-                  <use href="/src/assets/icons/icons.svg#icon-search"></use>
+                <svg id="filter-icon" class="search-bar__filter-icon">
+                  <use href="/src/assets/icons/icons.svg#icon-filter"></use>
                 </svg>
-                <input
-                  class="input search-bar__input"
-                  placeholder="Default Sorting"
-                />
+                <select id="select-sort" class="select search-bar__input">
+                  <option value="default">Default Sorting</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="popular">Most Popular</option>
+                  <option value="rating">Top Rated</option>
+                </select>
               </div>
             </div>
             <div class="search-bar__input-field">
@@ -34,6 +38,83 @@
                 class="input search-bar__input"
                 placeholder="Search Models"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="filter" class="filter filter__hide">
+        <div class="container">
+          <div class="filter__content">
+            <div class="filter__options">
+              <div class="filter__select">
+                <label
+                  for="size"
+                  class="text-body text-body--sm text-body--bold text-body--secondary"
+                  >Size</label
+                >
+                <select id="size" class="select">
+                  <option value="">Choose option</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="SL">S-L</option>
+                  <option value="SMXL">S, M, XL</option>
+                </select>
+              </div>
+              <div class="filter__select">
+                <label
+                  for="size"
+                  class="text-body text-body--sm text-body--bold text-body--secondary"
+                  >Color</label
+                >
+                <select id="color" class="select">
+                  <option value="">Choose option</option>
+                  <option value="red">Red</option>
+                  <option value="blue">Blue</option>
+                  <option value="green">Green</option>
+                  <option value="black">Black</option>
+                  <option value="grey">Grey</option>
+                  <option value="yellow">Yellow</option>
+                  <option value="pink">Pink</option>
+                </select>
+              </div>
+              <div class="filter__select">
+                <label
+                  for="size"
+                  class="text-body text-body--sm text-body--bold text-body--secondary"
+                  >Category</label
+                >
+                <select id="category" class="select">
+                  <option value="">Choose option</option>
+                  <option value="carry-ons">Carry-ons</option>
+                  <option value="suitcases">Suitcases</option>
+                  <option value="luggage sets">Luggage sets</option>
+                  <option value="kids' luggage">Kids' luggage</option>
+                </select>
+              </div>
+              <div class="filter__select">
+                <label
+                  for="sales"
+                  class="text-body text-body--sm text-body--bold text-body--secondary"
+                  >Sales</label
+                >
+                <div class="filter__select filter__select--radio">
+                  <input
+                    class="filter__radio"
+                    type="radio"
+                    name="sales"
+                    id="sales"
+                    value="sales"
+                    switch
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="filter__buttons">
+              <button id="clear-filters" class="button">CLEAR FILTERS</button>
+              <button id="hide-filters" class="button">HIDE FILTERS</button>
             </div>
           </div>
         </div>

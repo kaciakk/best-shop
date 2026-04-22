@@ -18,6 +18,10 @@
     align-items: center;
   }
   &__input-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     position: relative;
     width: 100%;
 
@@ -37,5 +41,11 @@
     transform: translateY(-50%);
     pointer-events: none;
     color: $color-input-text;
+  }
+  &__filter-icon {
+    width: 25px;
+    height: 25px;
+    color: $color-secondary;
+    cursor: pointer;
   }
 }

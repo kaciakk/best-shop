@@ -2,6 +2,12 @@ export function renderHeader() {
     const header = document.getElementById("header");
     if (!header)
         return;
+    const localStorageItems = JSON.parse(localStorage.getItem("cart") || "[]");
+    let totalQuantityValue = 0;
+    const quantityItems = localStorageItems.reduce((total, item) => {
+        return total + item.quantity;
+    }, totalQuantityValue);
+    totalQuantityValue = quantityItems;
     header.innerHTML = `
   <div class="container">
         <div class="header__content">
@@ -16,7 +22,8 @@ export function renderHeader() {
                 <use href="/src/assets/icons/icons.svg#icon-twitter"></use>
               </svg>
             </a>
-            <a href="#" class="header__action">
+            
+             <a href="#" class="header__action">
               <svg class="header__action-icon">
                 <use href="/src/assets/icons/icons.svg#icon-instagram"></use>
               </svg>
@@ -33,10 +40,12 @@ export function renderHeader() {
               </svg>
             </a>
             <a href="/src/html/cart.html" class="header__action">
+            ${totalQuantityValue >= 1 ? `<span class="header__cart-icon">${totalQuantityValue}</span>` : ``}
               <svg class="header__action-icon header__action-icon--lg">
                 <use href="/src/assets/icons/icons.svg#icon-cart"></use>
               </svg>
             </a>
+            </div>
           </div>
         </div>
         <nav class="nav">

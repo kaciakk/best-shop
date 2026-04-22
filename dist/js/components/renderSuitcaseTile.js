@@ -2,8 +2,9 @@ export function renderSuitcaseTile(product, buttonText) {
     const { id, name, price, imageUrl, salesStatus } = product;
     return `<div class="suitcaseTile">
     <div class="suitcaseTile__image">
+    <a href="/src/html/product-card.html?id=${id}" >
         <img src="${imageUrl}" />
-        
+        </a>
 ${salesStatus ? `<div class="suitcaseTile__sale">SALE</div>` : ""}
     </div>
    

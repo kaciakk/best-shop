@@ -12,6 +12,8 @@
 
 @use "components/shared/forms/buttons";
 @use "components/shared/forms/input";
+@use "components/shared/forms/select";
+
 @use "components/shared/travel";
 @use "components/shared/products";
 @use "components/shared/suitcaseTile";
@@ -35,6 +37,7 @@
 
 @use "components/catalog/catalog";
 @use "components/catalog/search-bar";
+@use "components/catalog/filter";
 
 @use "components/product-card/product-card";
 @use "components/product-card/details";

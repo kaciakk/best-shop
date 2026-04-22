@@ -6,6 +6,7 @@ $color-grey-light: #e9e9ed;
 
 $color-backgorund: $color-primary;
 $color-backgorund-secondary: $color-secondary;
+$color-backgorund-light: $color-white;
 
 $color-border-primary: $color-primary;
 $color-border-secondary: $color-secondary;
@@ -25,3 +26,7 @@ $color-button-text-inverse: $color-primary;
 $color-button-background: $color-primary;
 $color-button-background-inverse: $color-white;
 $color-button-border: $color-primary;
+
+$color-select-border: $color-grey-light;
+$color-select-text: $color-text-secondary;
+$color-select-background: $color-white;

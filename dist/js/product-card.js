@@ -12,13 +12,24 @@ import { renderFooter } from "./components/renderFooter.js";
 import { renderBenefits } from "./components/renderBenefits.js";
 import { renderSuitcaseTile } from "./components/renderSuitcaseTile.js";
 import { getProducts } from "./api/getProducts.js";
+import { renderProductDetailsContent } from "./components/renderProductDetailsContent.js";
 document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void 0, function* () {
     renderHeader();
     renderFooter();
     renderBenefits();
     const products = yield getProducts();
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get("id");
     renderPreferProducts(products);
+    renderProductDetails(products, productId);
 }));
+const productDetailContent = document.getElementById("product-content");
+function renderProductDetails(products, currentProductId) {
+    const productDetails = products.find((item) => {
+        return item.id === currentProductId;
+    });
+    return (productDetailContent === null || productDetailContent === void 0 ? void 0 : productDetailContent.innerHTML = `${renderProductDetailsContent(productDetails)}`);
+}
 const preferList = document.getElementById("prefer-list");
 function renderPreferProducts(products) {
     const filteredProducts = products.filter((prod) => prod.blocks.includes("You May Also Like"));

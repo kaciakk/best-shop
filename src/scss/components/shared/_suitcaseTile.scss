@@ -8,7 +8,9 @@
 
   &__image {
     width: 100%;
-    max-width: 290px;
+    height: 100%;
+    max-width: 400px;
+    max-height: 450px;
     aspect-ratio: 1/1.25;
     overflow: hidden;
     box-shadow:

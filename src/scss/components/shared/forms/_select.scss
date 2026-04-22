@@ -1,0 +1,12 @@
+@use "../../../abstracts/colors" as *;
+.select {
+  border: 1px solid $color-select-border;
+  color: $color-select-text;
+  background-color: $color-select-background;
+  width: 100%;
+  padding: 10px 30px 10px 10px;
+
+  &::placeholder {
+    color: $color-select-text;
+  }
+}

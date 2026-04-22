@@ -11,6 +11,10 @@
   padding: 10px 24px;
   cursor: pointer;
 
+  &:hover {
+    background: lighten($color-button-background, 10%);
+  }
+
   &--inverse {
     background-color: $color-button-background-inverse;
     color: $color-button-text-inverse;

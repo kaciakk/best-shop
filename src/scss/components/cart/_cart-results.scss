@@ -34,6 +34,10 @@
       border: none;
       margin-bottom: 1rem;
     }
+
+    &--hide {
+      display: none;
+    }
   }
   &__checkout-button {
     width: 50%;
