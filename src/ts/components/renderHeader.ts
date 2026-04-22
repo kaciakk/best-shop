@@ -36,11 +36,11 @@ export function renderHeader(): void {
             <div class="header__logo-text">BEST SHOP</div>
           </a>
           <div class="header__controls">
-            <a href="#" class="header__action">
+            <div id="login-user" class="header__action">
               <svg class="header__action-icon header__action-icon--lg">
                 <use href="/src/assets/icons/icons.svg#icon-user"></use>
               </svg>
-            </a>
+            </div>
             <a href="/src/html/cart.html" class="header__action">
             ${totalQuantityValue >= 1 ? `<span class="header__cart-icon">${totalQuantityValue}</span>` : ``}
               <svg class="header__action-icon header__action-icon--lg">
@@ -75,5 +75,66 @@ export function renderHeader(): void {
           </div>
         </nav>
       </div>
+
+
+        <div id="modal" class="modal modal--hidden">
+        <form class="modal__content">
+          <div class="modal__field">
+            <label for="login" class="modal__label modal__label--required">
+              Email address
+            </label>
+            <input type="email" id="login" class="input modal__input"  required/>
+          </div>
+
+          <div class="modal__field">
+            <label for="password" class="modal__label modal__label--required">
+              Password
+            </label>
+            <div class="modal__input-field">
+            <svg id="password-icon" class="modal__icon">
+                <use href="/src/assets/icons/icons.svg#icon-password"></use>
+              </svg>
+            <input
+              type="password"
+              id="password"
+              class="input modal__input"
+              required
+            /></div>
+          </div>
+
+          <div class="modal__actions">
+            <label class="modal__remember">
+              <input type="checkbox" class="modal__checkbox" />
+              <span class="modal__remember-text text-body text-body--primary">
+                Remember me
+              </span>
+            </label>
+
+            <a href="#" class="modal__forgot text-body text-body--bold text-body--primary">
+              Forgot your password?
+            </a>
+          </div>
+
+          <button type="submit" class="button modal__button">Login</button>
+        </form>
+      </div>
     `;
+
+  const loginIcon = document.getElementById("login-user");
+  const modal = document.getElementById("modal");
+  const passwordIcon = document.getElementById("password-icon");
+  const passwordInput = document.getElementById("password");
+
+  loginIcon?.addEventListener("click", () => {
+    console.log("click");
+    modal?.classList.remove("modal--hidden");
+  });
+
+  passwordIcon?.addEventListener("click", () => {
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+    } else {
+      passwordInput.type = "password";
+    }
+  });
 }

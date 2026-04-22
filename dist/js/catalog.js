@@ -46,6 +46,21 @@ function renderCatalogSets(products) {
         .join("")}
   `;
 }
+function searchProduct(products, value) {
+    const searchValue = value.toLowerCase().trim();
+    if (searchValue.length < 4)
+        return alert("Product not found");
+    const currentSearch = products.find((item) => {
+        return item.name.toLowerCase().trim().includes(searchValue);
+    });
+    if (currentSearch) {
+        window.location.href = `/src/html/product-card.html?id=${currentSearch.id}`;
+    }
+    else {
+        alert("Product not found");
+    }
+    return currentSearch;
+}
 //VARIABLES
 const sizeSelect = document.getElementById("size");
 const colorSelect = document.getElementById("color");
@@ -57,6 +72,7 @@ const buttonClearFilters = document.getElementById("clear-filters");
 const buttonHideFilters = document.getElementById("hide-filters");
 const filterContainer = document.getElementById("filter");
 const filterIcon = document.getElementById("filter-icon");
+const searchInput = document.getElementById("search-input");
 const filterOptions = {
     size: "",
     color: "",
@@ -126,4 +142,9 @@ buttonHideFilters === null || buttonHideFilters === void 0 ? void 0 : buttonHide
 filterIcon === null || filterIcon === void 0 ? void 0 : filterIcon.addEventListener("click", () => {
     console.log("click");
     filterContainer === null || filterContainer === void 0 ? void 0 : filterContainer.classList.remove("filter__hide");
+});
+searchInput === null || searchInput === void 0 ? void 0 : searchInput.addEventListener("change", (e) => {
+    let inputValue = searchInput.value;
+    searchProduct(products, inputValue);
+    console.log(inputValue);
 });
