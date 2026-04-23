@@ -29,7 +29,7 @@ export function renderHeader() {
               </svg>
             </a>
           </div>
-          <a href="/src" class="header__logo">
+          <a href="/src/index.html" class="header__logo">
             <img src="/src/assets/icons/logo.png" class="header__logo-icon" />
             <div class="header__logo-text">BEST SHOP</div>
           </a>
@@ -52,7 +52,7 @@ export function renderHeader() {
           <div class="nav__content">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="/src" class="nav__item-link">Home</a>
+                <a href="/src/index.html" class="nav__item-link">Home</a>
               </li>
               <li class="nav__item">
                 <a href="/src/html/catalog.html" class="nav__item-link"
@@ -76,12 +76,15 @@ export function renderHeader() {
 
 
         <div id="modal" class="modal modal--hidden">
-        <form class="modal__content">
+        <form id="login-form"class="modal__content">
+         <svg id="icon-close" class="modal__icon modal__icon--close">
+                <use href="/src/assets/icons/icons.svg#icon-close"></use>
+              </svg>
           <div class="modal__field">
             <label for="login" class="modal__label modal__label--required">
               Email address
             </label>
-            <input type="email" id="login" class="input modal__input"  required/>
+            <input type="email" id="email-modal" class="input modal__input"  required/>
           </div>
 
           <div class="modal__field">
@@ -94,7 +97,7 @@ export function renderHeader() {
               </svg>
             <input
               type="password"
-              id="password"
+              id="password-modal"
               class="input modal__input"
               required
             /></div>
@@ -113,14 +116,25 @@ export function renderHeader() {
             </a>
           </div>
 
-          <button type="submit" class="button modal__button">Login</button>
+          <button type="submit" id="login-button" class="button modal__button">Login</button>
         </form>
       </div>
     `;
     const loginIcon = document.getElementById("login-user");
     const modal = document.getElementById("modal");
     const passwordIcon = document.getElementById("password-icon");
-    const passwordInput = document.getElementById("password");
+    const emailInput = document.getElementById("email-modal");
+    const passwordInput = document.getElementById("password-modal");
+    const loginForm = document.getElementById("login-form");
+    const closeIcon = document.getElementById("icon-close");
+    const links = document.querySelectorAll(".nav__item-link");
+    const currentPath = window.location.pathname;
+    links.forEach((link) => {
+        const linkPath = link.getAttribute("href");
+        if (linkPath === currentPath) {
+            link.classList.add("nav__item-link--active");
+        }
+    });
     loginIcon === null || loginIcon === void 0 ? void 0 : loginIcon.addEventListener("click", () => {
         console.log("click");
         modal === null || modal === void 0 ? void 0 : modal.classList.remove("modal--hidden");
@@ -132,5 +146,21 @@ export function renderHeader() {
         else {
             passwordInput.type = "password";
         }
+    });
+    loginForm === null || loginForm === void 0 ? void 0 : loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const emailValue = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailValue)) {
+            alert("Invalid email");
+            return;
+        }
+        alert("Login OK");
+        modal === null || modal === void 0 ? void 0 : modal.classList.add("modal--hidden");
+        emailInput.value = "";
+        passwordInput.value = "";
+    });
+    closeIcon === null || closeIcon === void 0 ? void 0 : closeIcon.addEventListener("click", () => {
+        modal === null || modal === void 0 ? void 0 : modal.classList.add("modal--hidden");
     });
 }

@@ -114,7 +114,7 @@
                     class="text-title text-title--sm text-title--bold feedback__is-required"
                     >Your Name</label
                   >
-                  <input type="text" id="name" class="input" required />
+                  <input type="text" id="name-contact" class="input" required />
                 </div>
                 <div class="feedback__form-item">
                   <label
@@ -122,7 +122,12 @@
                     class="text-title text-title--sm text-title--bold feedback__is-required"
                     >Your Email Address</label
                   >
-                  <input type="email" id="email" class="input" required />
+                  <input
+                    type="email"
+                    id="email-contact"
+                    class="input"
+                    required
+                  />
                 </div>
                 <div class="feedback__form-item">
                   <label
@@ -130,7 +135,12 @@
                     class="text-title text-title--sm text-title--bold feedback__is-required"
                     >Topic</label
                   >
-                  <input type="text" id="topic" class="input" required />
+                  <input
+                    type="text"
+                    id="topic-contact"
+                    class="input"
+                    required
+                  />
                 </div>
                 <div class="feedback__form-item">
                   <label
@@ -139,7 +149,7 @@
                     >Your Message</label
                   >
                   <textarea
-                    id="message"
+                    id="message-contact"
                     form="contact-form"
                     class="input feedback__form-input-message"
                     rows="8"
@@ -147,7 +157,11 @@
                   ></textarea>
                 </div>
 
-                <button type="submit" class="button feedback__button">
+                <button
+                  id="submit-button"
+                  type="submit"
+                  class="button feedback__button"
+                >
                   Send
                 </button>
               </form>

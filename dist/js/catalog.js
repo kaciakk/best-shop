@@ -85,6 +85,8 @@ sizeSelect === null || sizeSelect === void 0 ? void 0 : sizeSelect.addEventListe
     const sizeOption = e.target.value;
     filterOptions.size = sizeOption;
     const filteredCatalog = filterCatalog(products, filterOptions);
+    console.log(sizeOption);
+    console.log(filteredCatalog);
     renderCatalog(filteredCatalog);
 });
 colorSelect === null || colorSelect === void 0 ? void 0 : colorSelect.addEventListener("change", (e) => {

@@ -13,15 +13,18 @@ import { renderBenefits } from "./components/renderBenefits.js";
 import { renderSuitcaseTile } from "./components/renderSuitcaseTile.js";
 import { getProducts } from "./api/getProducts.js";
 import { renderProductDetailsContent } from "./components/renderProductDetailsContent.js";
+import { addToCart } from "./store/cartStore.js";
+let allProducts = [];
+let quantity = 1;
 document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void 0, function* () {
     renderHeader();
     renderFooter();
     renderBenefits();
-    const products = yield getProducts();
+    allProducts = yield getProducts();
     const params = new URLSearchParams(window.location.search);
     const productId = params.get("id");
-    renderPreferProducts(products);
-    renderProductDetails(products, productId);
+    renderPreferProducts(allProducts);
+    renderProductDetails(allProducts, productId);
 }));
 const productDetailContent = document.getElementById("product-content");
 function renderProductDetails(products, currentProductId) {
@@ -39,3 +42,33 @@ function renderPreferProducts(products) {
     return (preferList.innerHTML = `
     ${result.map((res) => `${renderSuitcaseTile(res, "Add To Cart")}`).join("")}`);
 }
+productDetailContent === null || productDetailContent === void 0 ? void 0 : productDetailContent.addEventListener("click", (e) => {
+    const button = e.target.closest("button");
+    if (!button)
+        return;
+    const buttonAddtoCart = button.id === "add-to-cart-details";
+    const buttonAddQuantity = button.id === "button-quantity-add";
+    const buttonDecQuantity = button.id === "button-quantity-dec";
+    const quantityProductCard = document.getElementById("product-card-quantity");
+    if (buttonAddtoCart) {
+        const productId = button.dataset.id;
+        if (productId) {
+            const productToAdd = allProducts.find((item) => item.id === productId);
+            if (productToAdd) {
+                addToCart(Object.assign(Object.assign({}, productToAdd), { quantity }));
+                renderHeader();
+            }
+        }
+    }
+    if (buttonAddQuantity) {
+        const productId = button.dataset.id;
+        quantity++;
+        quantityProductCard === null || quantityProductCard === void 0 ? void 0 : quantityProductCard.textContent = quantity;
+    }
+    if (buttonDecQuantity) {
+        const productId = button.dataset.id;
+        if (quantity > 1)
+            quantity--;
+        quantityProductCard === null || quantityProductCard === void 0 ? void 0 : quantityProductCard.textContent = quantity;
+    }
+});

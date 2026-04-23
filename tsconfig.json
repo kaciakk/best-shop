@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "ESNext",
+    "lib": ["ES2016", "DOM"],
     "outDir": "./dist/js",
     "rootDir": "./src/ts",
     "strict": true,

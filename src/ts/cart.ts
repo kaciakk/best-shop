@@ -60,9 +60,9 @@ function renderCartItems(products) {
   }
 
   //Value assigne
-  shipping?.innerHTML = `$${CART_CONFIG.shipping}`;
+  shipping?.innerHTML = `${subTotalValue === 0 ? `$0` : `$${CART_CONFIG.shipping}`}`;
   subTotal?.innerHTML = `$${subTotalValue}`;
-  total?.innerHTML = `$${totalValue}`;
+  total?.innerHTML = `${subTotalValue === 0 ? `$0` : `$${totalValue}`}`;
 
   if (cart.length > 0) {
     cartItem.innerHTML = cart

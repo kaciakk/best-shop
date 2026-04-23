@@ -15,13 +15,16 @@ export function addToCart(product) {
     if (existingItem) {
         const updateCart = localStorageItems.map((item) => {
             if (item.id === product.id) {
-                return Object.assign(Object.assign({}, item), { quantity: item.quantity + 1 });
+                return Object.assign(Object.assign({}, item), { quantity: item.quantity + product.quantity });
             }
             return item;
         });
         setLocalStorageCart(updateCart);
     }
     else {
-        setLocalStorageCart([...localStorageItems, product]);
+        setLocalStorageCart([
+            ...localStorageItems,
+            Object.assign(Object.assign({}, product), { quantity: product.quantity || 1 }),
+        ]);
     }
 }

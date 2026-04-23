@@ -19,12 +19,15 @@ export function addToCart(product) {
   if (existingItem) {
     const updateCart = localStorageItems.map((item) => {
       if (item.id === product.id) {
-        return { ...item, quantity: item.quantity + 1 };
+        return { ...item, quantity: item.quantity + product.quantity };
       }
       return item;
     });
     setLocalStorageCart(updateCart);
   } else {
-    setLocalStorageCart([...localStorageItems, product]);
+    setLocalStorageCart([
+      ...localStorageItems,
+      { ...product, quantity: product.quantity || 1 },
+    ]);
   }
 }

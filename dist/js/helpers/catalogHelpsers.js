@@ -1,7 +1,15 @@
 export function filterCatalog(products, filter) {
     let result = [...products];
     if (filter.size) {
-        result = result.filter((item) => item.size === filter.size);
+        if (filter.size === "SL") {
+            result = result.filter((item) => ["S", "M", "L"].includes(item.size));
+        }
+        else if (filter.size === "SMXL") {
+            result = result.filter((item) => ["S", "M", "XL"].includes(item.size));
+        }
+        else {
+            result = result.filter((item) => item.size === filter.size);
+        }
     }
     if (filter.color) {
         result = result.filter((item) => item.color === filter.color);

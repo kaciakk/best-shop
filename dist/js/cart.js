@@ -45,9 +45,9 @@ function renderCartItems(products) {
         discount === null || discount === void 0 ? void 0 : discount.innerHTML = `$0`;
     }
     //Value assigne
-    shipping === null || shipping === void 0 ? void 0 : shipping.innerHTML = `$${CART_CONFIG.shipping}`;
+    shipping === null || shipping === void 0 ? void 0 : shipping.innerHTML = `${subTotalValue === 0 ? `$0` : `$${CART_CONFIG.shipping}`}`;
     subTotal === null || subTotal === void 0 ? void 0 : subTotal.innerHTML = `$${subTotalValue}`;
-    total === null || total === void 0 ? void 0 : total.innerHTML = `$${totalValue}`;
+    total === null || total === void 0 ? void 0 : total.innerHTML = `${subTotalValue === 0 ? `$0` : `$${totalValue}`}`;
     if (cart.length > 0) {
         cartItem.innerHTML = cart
             .map((res) => {

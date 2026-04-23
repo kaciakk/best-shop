@@ -197,6 +197,9 @@ a {
 .nav__item-link:hover {
   color: #b92770;
 }
+.nav__item-link--active {
+  color: #b92770;
+}
 
 .footer {
   margin-bottom: 6rem;
@@ -540,6 +543,7 @@ a {
   width: 100%;
   max-width: 400px;
   max-height: 300px;
+  position: relative;
 }
 .modal__field {
   display: flex;
@@ -584,6 +588,12 @@ a {
   color: #504e4a;
   cursor: pointer;
   z-index: 2;
+}
+.modal__icon--close {
+  width: 25px;
+  height: 25px;
+  top: 25px;
+  right: 10px;
 }
 .modal__input-field {
   display: flex;

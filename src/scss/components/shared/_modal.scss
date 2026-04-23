@@ -24,6 +24,7 @@
     width: 100%;
     max-width: 400px;
     max-height: 300px;
+    position: relative;
   }
 
   &__field {
@@ -78,6 +79,12 @@
     color: $color-input-text;
     cursor: pointer;
     z-index: 2;
+    &--close {
+      width: 25px;
+      height: 25px;
+      top: 25px;
+      right: 10px;
+    }
   }
   &__input-field {
     display: flex;

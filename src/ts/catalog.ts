@@ -88,7 +88,8 @@ sizeSelect?.addEventListener("change", (e) => {
   const sizeOption = e.target.value;
   filterOptions.size = sizeOption;
   const filteredCatalog = filterCatalog(products, filterOptions);
-
+  console.log(sizeOption);
+  console.log(filteredCatalog);
   renderCatalog(filteredCatalog);
 });
 

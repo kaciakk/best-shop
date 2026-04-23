@@ -1,5 +1,5 @@
 export function renderProductDetailsContent(product) {
-    const { name, rating, price, imageUrl } = product;
+    const { id, name, rating, price, imageUrl } = product;
     return `
 <div class="product-card__left">
               <div class="product-card__image">
@@ -71,14 +71,14 @@ export function renderProductDetailsContent(product) {
                   />
                   <div class="product-card__buttons-form">
                     <div class="product-card__counter">
-                      <button class="button button--inverse">-</button>
-                      <span
+                      <button id="button-quantity-dec" data-id="${id}" type="button" class="button button--inverse">-</button>
+                      <span id="product-card-quantity"
                         class="text-body text-body--primary text-body--md text-body--bold"
                         >1</span
                       >
-                      <button class="button button--inverse">+</button>
+                      <button id="button-quantity-add" data-id="${id}" type="button" class="button button--inverse">+</button>
                     </div>
-                    <button class="button">Add To Cart</button>
+                    <button type="button" data-id="${id}" id="add-to-cart-details" class="button">Add To Cart</button>
                   </div>
                 </div>
               </form>

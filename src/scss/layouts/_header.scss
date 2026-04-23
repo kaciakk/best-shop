@@ -105,5 +105,8 @@
     &:hover {
       color: $color-text-primary;
     }
+    &--active {
+      color: $color-text-primary;
+    }
   }
 }
