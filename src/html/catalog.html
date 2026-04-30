@@ -13,7 +13,7 @@
         <div class="container">
           <div class="search-bar__content">
             <div class="search-bar__left">
-              <div>Showing 1-12 Of 15 Results</div>
+              <div id="show-result"></div>
 
               <div
                 class="search-bar__input-field search-bar__input-field--sorting"
@@ -127,6 +127,32 @@
             <div id="catalog__right" class="catalog__right">
               <h5>Top Best Sets</h5>
               <div id="catalog__sets" class="catalog__sets"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pagination">
+        <div class="container">
+          <div class="pagination__content">
+            <div class="pagination__left">
+              <button id="button-prev-page" class="button button--pagination">
+                <span class="text-body text-body--xs text-body--bold"
+                  >&lt;</span
+                >
+                <span class="text-body text-body--xs text-body--bold"
+                  >Prev</span
+                >
+              </button>
+
+              <div id="buttons-pages" class="pagination__pages"></div>
+              <button id="button-next-page" class="button button--pagination">
+                <span class="text-body text-body--xs text-body--bold"
+                  >Next</span
+                >
+                <span class="text-body text-body--xs text-body--bold"
+                  >&gt;</span
+                >
+              </button>
             </div>
           </div>
         </div>

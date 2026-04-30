@@ -1,7 +1,9 @@
 @use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
 
 .footer {
   margin-bottom: 6rem;
+
   &__content {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -10,6 +12,7 @@
       "shipping shipping shipping . information1 information2";
     gap: 2rem;
   }
+
   &__about {
     grid-area: about;
   }
@@ -25,29 +28,23 @@
   &__shipping {
     grid-area: shipping;
   }
+
   &__information-area1 {
     grid-area: information1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 1.5rem;
+    @include flex($direction: column, $gap: 1.5rem);
   }
+
   &__information-area2 {
     grid-area: information2;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 1.5rem;
+    @include flex($direction: column, $gap: 1.5rem);
   }
+
   &__title {
     margin-bottom: 1rem;
   }
+
   &__items {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    @include flex($direction: column, $gap: 0.5rem);
     padding-bottom: 2rem;
     list-style-type: none;
     margin: 0;
@@ -55,18 +52,16 @@
   }
 
   &__item {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
+    @include flex($align: center, $gap: 1rem);
   }
+
   &__icon {
     width: 20px;
     height: 20px;
     color: $color-text-primary;
   }
+
   &__info {
-    display: flex;
-    flex-direction: column;
+    @include flex($direction: column);
   }
 }

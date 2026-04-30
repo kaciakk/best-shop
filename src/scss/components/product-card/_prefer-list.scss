@@ -1,19 +1,18 @@
 @use "../../abstracts/colors" as *;
+@use "../../abstracts/mixins" as *;
+
 .prefer-list {
   margin-bottom: 6rem;
+
   &__content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 3rem;
+    @include flex(center, center, column, 3rem);
   }
+
   &__items {
-    display: flex;
-    justify-content: space-between;
+    @include flex(space-between, stretch, row, 1rem);
     width: 100%;
-    gap: 1rem;
   }
+
   &__title {
     border-bottom: 2px solid $color-text-primary;
   }

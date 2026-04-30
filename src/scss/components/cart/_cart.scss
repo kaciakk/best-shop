@@ -1,21 +1,26 @@
 @use "../../abstracts/colors" as *;
+@use "../../abstracts/mixins" as *;
+
 .cart {
   margin-bottom: 6rem;
+
   &__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center);
   }
+
   &__table {
     width: 100%;
     border-collapse: collapse;
   }
+
   &__table-head {
     background-color: $color-backgorund-secondary;
   }
+
   &__table-row {
     border-bottom: 1px solid $color-border-primary;
   }
+
   &__table-cell {
     text-align: center;
 
@@ -23,6 +28,7 @@
       padding: 1rem 0;
     }
   }
+
   &__table-cell-icon {
     color: $color-primary;
     fill: $color-white;
@@ -43,9 +49,8 @@
     object-fit: contain;
     display: block;
   }
+
   &__buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center);
   }
 }

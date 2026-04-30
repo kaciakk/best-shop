@@ -1,39 +1,39 @@
 @use "../../abstracts/colors" as *;
+@use "../../abstracts/mixins" as *;
+
 .filter {
   margin-bottom: 2rem;
+
   &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    @include flex($direction: column, $gap: 2rem);
     border-top: 2px solid $color-border-primary;
     padding-top: 2rem;
   }
+
   &__options {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    @include grid(4, 2rem);
   }
+
   &__select {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    @include flex(flex-start, flex-start, column, 1rem);
     justify-items: center;
-    gap: 1rem;
+
     &--radio {
       justify-content: center;
       height: 100%;
     }
   }
+
   &__buttons {
-    display: flex;
-    gap: 1rem;
+    @include flex($gap: 1rem);
     padding-top: 4rem;
     border-top: 2px solid $color-border-primary;
   }
+
   &__radio {
     accent-color: $color-primary;
   }
+
   &__hide {
     display: none;
   }

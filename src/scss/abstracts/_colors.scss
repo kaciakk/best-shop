@@ -10,6 +10,7 @@ $color-backgorund-light: $color-white;
 
 $color-border-primary: $color-primary;
 $color-border-secondary: $color-secondary;
+$color-border-inverse: $color-white;
 
 $color-text-primary: $color-primary;
 $color-text-secondary: $color-secondary;
@@ -21,11 +22,13 @@ $color-input-border: $color-grey-light;
 $color-input-text: $color-text-secondary;
 $color-input-background: $color-white;
 
-$color-button-text: $color-white;
-$color-button-text-inverse: $color-primary;
+$color-button-text: $color-text-inverse;
+$color-button-text-inverse: $color-text-basic;
+$color-button-text-primary: $color-text-primary;
 $color-button-background: $color-primary;
 $color-button-background-inverse: $color-white;
-$color-button-border: $color-primary;
+$color-button-border: $color-border-primary;
+$color-button-border-inverse: $color-border-inverse;
 
 $color-select-border: $color-grey-light;
 $color-select-text: $color-text-secondary;

@@ -66,3 +66,54 @@ newArrivalsProducts?.addEventListener("click", (e) => {
   window.location.href = `/src/html/product-card.html?id=${buttonId}`;
   console.log(buttonId);
 });
+
+const track = document.querySelector(".travel-products__track");
+const tiles = document.querySelectorAll(".travel-products__tile");
+const tilesWrapper = document.querySelector(".travel-products__tiles");
+
+const prevBtn = document.querySelector(".travel-products__prev");
+const nextBtn = document.querySelector(".travel-products__next");
+
+let currentIndex = 0;
+
+function getTileWidth() {
+  const gap = parseInt(getComputedStyle(track).gap) || 0;
+  return tiles[0].offsetWidth + gap;
+}
+
+function getVisibleTiles() {
+  return Math.floor(tilesWrapper.offsetWidth / getTileWidth());
+}
+
+function updateCarousel() {
+  const tileWidth = getTileWidth();
+  track.style.transform = `translateX(-${currentIndex * tileWidth}px)`;
+}
+
+nextBtn.addEventListener("click", () => {
+  const visibleTiles = getVisibleTiles();
+  const maxIndex = tiles.length - visibleTiles;
+
+  if (currentIndex < maxIndex) {
+    currentIndex++;
+    updateCarousel();
+  }
+});
+
+prevBtn.addEventListener("click", () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+});
+
+window.addEventListener("resize", () => {
+  const visibleTiles = getVisibleTiles();
+  const maxIndex = tiles.length - visibleTiles;
+
+  if (currentIndex > maxIndex) {
+    currentIndex = Math.max(maxIndex, 0);
+  }
+
+  updateCarousel();
+});

@@ -1,19 +1,125 @@
+@use "../../abstracts/mixins" as *;
+
 .travel-products {
   margin-bottom: 6rem;
+
   &__content {
-    display: flex;
-    flex-direction: column;
+    @include flex($direction: column);
   }
+
   &__title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center, column);
     margin-bottom: 4rem;
   }
+
   &__tiles {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  &__track {
     display: flex;
-    justify-content: flex-start;
-    gap: 1rem;
+    gap: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  &__tile {
+    @include flex;
+    flex: 0 0 300px;
+
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("/src/assets/Homepage/suitcase-real-live.png");
+
+    @include bg-cover;
+
+    max-width: 400px;
+    padding: 2rem;
+    aspect-ratio: 2 / 4;
+    &:hover {
+      transform: scale(0.99);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    }
+
+    &--2 {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("/src/assets/Homepage/suitcase-real-live-1.png");
+    }
+
+    &--3 {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("/src/assets/Homepage/suitcase-real-live-2.png");
+    }
+
+    &--4 {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("/src/assets/Homepage/suitcase-real-live-3.png");
+    }
+
+    &--5 {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("/src/assets/Homepage/suitcase-real-live.png");
+    }
+    &--6 {
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("/src/assets/Homepage/suitcase-real-live-1.png");
+    }
+  }
+
+  &__description {
+    @include flex(flex-end, stretch, column, 2rem);
+    color: white;
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  &__prev:hover,
+  &__next:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &__prev {
+    left: 10px;
+  }
+
+  &__next {
+    right: 10px;
+  }
+
+  &__prev svg,
+  &__next svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    stroke-width: 2;
+    fill: none;
   }
 }

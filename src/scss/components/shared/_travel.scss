@@ -1,31 +1,28 @@
+@use "../../abstracts/mixins" as *;
+
 .travel {
   margin-bottom: 6rem;
-  &__content {
-  }
+
   &__tiles {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    @include flex(center, center, $gap: 2rem);
   }
+
   &__tile {
-    display: flex;
+    @include flex;
     flex: 1 1 300px;
     flex-wrap: wrap;
+
     background-image: url("/src/assets/Homepage/suitcase real-live-3.png");
+    @include bg-cover;
+
     width: 100%;
     max-width: 400px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     padding: 2rem;
     aspect-ratio: 2 / 4;
   }
+
   &__description {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    @include flex(flex-end, stretch, column, 2rem);
     color: white;
-    gap: 2rem;
   }
 }

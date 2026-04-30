@@ -1,11 +1,12 @@
+const CART_KEY = "cart";
 export function getLocalStorageCart() {
-    return JSON.parse(localStorage.getItem("cart") || "[]");
+    return JSON.parse(localStorage.getItem(CART_KEY) || "[]");
 }
 export function setLocalStorageCart(cart) {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 export function clearLocalStorageCart() {
-    localStorage.removeItem("cart");
+    localStorage.removeItem(CART_KEY);
 }
 export function addToCart(product) {
     const localStorageItems = getLocalStorageCart();
@@ -13,13 +14,13 @@ export function addToCart(product) {
         return item.id === product.id;
     });
     if (existingItem) {
-        const updateCart = localStorageItems.map((item) => {
+        const updatedCart = localStorageItems.map((item) => {
             if (item.id === product.id) {
                 return Object.assign(Object.assign({}, item), { quantity: item.quantity + product.quantity });
             }
             return item;
         });
-        setLocalStorageCart(updateCart);
+        setLocalStorageCart(updatedCart);
     }
     else {
         setLocalStorageCart([

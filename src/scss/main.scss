@@ -1,5 +1,6 @@
 @use "abstracts/mixins";
 @use "abstracts/colors";
+@use "abstracts/breakpoints";
 
 @use "base/fonts";
 @use "base/base";
@@ -41,7 +42,7 @@
 @use "components/catalog/filter";
 
 @use "components/product-card/product-card";
-@use "components/product-card/details";
+@use "components/product-card/informations";
 @use "components/product-card/prefer-list";
 
 @use "components/cart/cart";

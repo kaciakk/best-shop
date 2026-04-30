@@ -1,22 +1,19 @@
+@use "../../abstracts/mixins" as *;
+
 .selected-products {
   margin-bottom: 6rem;
+
   &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center, column);
   }
+
   &__title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center, column);
     margin-bottom: 4rem;
   }
+
   &__tiles {
-    display: flex;
-    justify-content: space-between;
+    @include flex(space-between, stretch, row, 1rem);
     width: 100%;
-    gap: 1rem;
   }
 }

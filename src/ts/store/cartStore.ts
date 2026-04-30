@@ -1,15 +1,20 @@
-export function getLocalStorageCart() {
-  return JSON.parse(localStorage.getItem("cart") || "[]");
-}
-export function setLocalStorageCart(cart) {
-  localStorage.setItem("cart", JSON.stringify(cart));
+import type { CartItem } from "../types/CartItem";
+
+const CART_KEY = "cart";
+
+export function getLocalStorageCart(): CartItem[] {
+  return JSON.parse(localStorage.getItem(CART_KEY) || "[]") as CartItem[];
 }
 
-export function clearLocalStorageCart() {
-  localStorage.removeItem("cart");
+export function setLocalStorageCart(cart: CartItem[]): void {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
-export function addToCart(product) {
+export function clearLocalStorageCart(): void {
+  localStorage.removeItem(CART_KEY);
+}
+
+export function addToCart(product: CartItem): void {
   const localStorageItems = getLocalStorageCart();
 
   const existingItem = localStorageItems.find((item) => {
@@ -17,17 +22,25 @@ export function addToCart(product) {
   });
 
   if (existingItem) {
-    const updateCart = localStorageItems.map((item) => {
+    const updatedCart = localStorageItems.map((item) => {
       if (item.id === product.id) {
-        return { ...item, quantity: item.quantity + product.quantity };
+        return {
+          ...item,
+          quantity: item.quantity + product.quantity,
+        };
       }
+
       return item;
     });
-    setLocalStorageCart(updateCart);
+
+    setLocalStorageCart(updatedCart);
   } else {
     setLocalStorageCart([
       ...localStorageItems,
-      { ...product, quantity: product.quantity || 1 },
+      {
+        ...product,
+        quantity: product.quantity || 1,
+      },
     ]);
   }
 }

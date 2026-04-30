@@ -1,17 +1,17 @@
+@use "../../abstracts/mixins" as *;
+
 .new-arrivals-products {
   margin-bottom: 6rem;
+
   &__content {
   }
+
   &__title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center, column);
     margin-bottom: 4rem;
   }
+
   &__tiles {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    @include flex(space-between, stretch, row, 1rem);
   }
 }

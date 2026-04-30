@@ -1,28 +1,26 @@
+@use "../../abstracts/mixins" as *;
+
 .hero {
   background-color: #e7e8e9;
   margin-bottom: 4rem;
   padding-bottom: 4rem;
 
   &__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    @include grid(2);
     align-items: center;
     justify-content: center;
     padding-top: 4rem;
   }
 
   &__left {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    @include flex($direction: column, $gap: 2rem);
     padding-right: 2rem;
   }
 
   &__image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center);
   }
+
   &__image img {
     width: 100%;
     height: 100%;

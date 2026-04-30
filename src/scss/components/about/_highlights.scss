@@ -1,20 +1,18 @@
 @use "../../abstracts/colors" as *;
+@use "../../abstracts/mixins" as *;
 
 .highlights {
   margin-bottom: 6rem;
+
   &__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
   }
+
   &__tile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    @include flex(center, center, column, 1rem);
     max-width: 220px;
   }
+
   &__icon {
     background-color: $color-primary;
     fill: $color-white;

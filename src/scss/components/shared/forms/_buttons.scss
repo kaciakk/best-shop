@@ -1,8 +1,8 @@
 @use "../../../abstracts/colors" as *;
+@use "../../../abstracts/mixins" as *;
+
 .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center);
   color: $color-button-text;
   background-color: $color-button-background;
   border: none;
@@ -17,6 +17,45 @@
 
   &--inverse {
     background-color: $color-button-background-inverse;
+    color: $color-button-text-primary;
+  }
+
+  &--details {
     color: $color-button-text-inverse;
+    border-bottom: 2px solid $color-button-border-inverse;
+    background-color: $color-button-background-inverse;
+    padding: 0;
+    margin: 10px;
+
+    &:hover {
+      background-color: $color-button-background-inverse;
+      border-bottom: 2px solid $color-button-border;
+    }
+  }
+  &--pagination {
+    @include flex(center, center, row, 1rem);
+    color: $color-button-text-inverse;
+    border: 2px solid $color-button-border;
+    border-radius: 10px;
+    background-color: $color-button-background-inverse;
+    text-align: center;
+  }
+  &--number {
+    @include flex(center, center, row, 1rem);
+    border: none;
+    border-radius: 10px;
+    color: $color-button-text-inverse;
+    text-align: center;
+    background-color: $color-button-background-inverse;
+    padding: 10px 20px;
+
+    &--active {
+      @include flex(center, center, row, 1rem);
+      color: $color-button-text;
+      border: 2px solid $color-button-border;
+      border-radius: 10px;
+      text-align: center;
+      background-color: $color-button-background;
+    }
   }
 }

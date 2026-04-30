@@ -1,19 +1,14 @@
+@use "../../abstracts/mixins" as *;
 .arrivals {
   margin-bottom: 6rem;
   &__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    @include grid(2, 4rem);
   }
   &__left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    @include flex(space-between, flex-start, column);
   }
   &__right {
-    display: flex;
-    justify-content: center;
+    @include flex;
   }
 
   &__image {

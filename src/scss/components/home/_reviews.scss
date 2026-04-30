@@ -1,46 +1,43 @@
+@use "../../abstracts/mixins" as *;
+
 .reviews {
   margin-bottom: 6rem;
+
   &__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center, column);
   }
+
   &__title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center, column, 1rem);
     padding-bottom: 4rem;
-    gap: 1rem;
   }
+
   &__tiles {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    @include grid(3, 2rem);
     justify-content: center;
     align-items: flex-start;
-    gap: 2rem;
     width: 100%;
     padding-bottom: 2rem;
   }
+
   &__tile {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
+    @include flex(space-evenly, center, column);
     min-height: 340px;
     box-shadow: 0 10px 30px #c1c7d4b3;
     padding: 0 2rem;
   }
+
   &__avatar {
     width: 95px;
     height: 95px;
   }
+
   &__avatar img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
+
   &__opinion {
     text-align: center;
     padding-left: 1rem;
