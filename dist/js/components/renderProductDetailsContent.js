@@ -3,20 +3,20 @@ export function renderProductDetailsContent(product) {
     return `
 <div class="product-card__left">
               <div class="product-card__image">
-                <img src="${imageUrl}" />
+                <img src="${imageUrl}" alt="${name}" />
               </div>
               <div class="product-card__small-images">
                 <div class="product-card__small-image">
-                  <img src="../assets/Product-Card/yellow-open1.png" />
+                  <img src="../assets/Product-Card/yellow-open1.png" alt="${name}" />
                 </div>
                 <div class="product-card__small-image">
-                  <img src="../assets/Product-Card/suitcase-small-2.png" />
+                  <img src="../assets/Product-Card/suitcase-small-2.png" alt="${name}" />
                 </div>
                 <div class="product-card__small-image">
-                  <img src="../assets/Product-Card/suitcase-small-4.png" />
+                  <img src="../assets/Product-Card/suitcase-small-4.png" alt="${name}" />
                 </div>
                 <div class="product-card__small-image">
-                  <img src="../assets/Product-Card/suitcase-small-card-1.png" />
+                  <img src="../assets/Product-Card/suitcase-small-card-1.png" alt="${name}" />
                 </div>
               </div>
             </div>

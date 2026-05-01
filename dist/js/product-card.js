@@ -28,19 +28,21 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
 }));
 const productDetailContent = document.getElementById("product-content");
 function renderProductDetails(products, currentProductId) {
-    const productDetails = products.find((item) => {
-        return item.id === currentProductId;
-    });
-    return (productDetailContent === null || productDetailContent === void 0 ? void 0 : productDetailContent.innerHTML = `${renderProductDetailsContent(productDetails)}`);
+    const productDetails = products.find((item) => item.id === currentProductId);
+    if (!productDetailContent)
+        return;
+    productDetailContent.innerHTML = renderProductDetailsContent(productDetails);
 }
 const preferList = document.getElementById("prefer-list");
 function renderPreferProducts(products) {
     const filteredProducts = products.filter((prod) => prod.blocks.includes("You May Also Like"));
-    let randList = [...filteredProducts];
-    randList.sort(() => Math.random() - 0.5);
-    const result = randList.slice(0, 4);
-    return (preferList.innerHTML = `
-    ${result.map((res) => `${renderSuitcaseTile(res, "Add To Cart")}`).join("")}`);
+    const randomProducts = [...filteredProducts].sort(() => Math.random() - 0.5);
+    const result = randomProducts.slice(0, 4);
+    if (!preferList)
+        return;
+    preferList.innerHTML = result
+        .map((product) => renderSuitcaseTile(product, "Add To Cart"))
+        .join("");
 }
 productDetailContent === null || productDetailContent === void 0 ? void 0 : productDetailContent.addEventListener("click", (e) => {
     const target = e.target;
@@ -124,7 +126,7 @@ buttonReviews === null || buttonReviews === void 0 ? void 0 : buttonReviews.addE
                   <div>
                     <div class="informations__review">
                       <div class="informations__title">
-                        <img src="../assets/Product-Card/review customer.png" />
+                        <img src="../assets/Product-Card/review customer.png" alt="customer"/>
                         <div>
                           <span
                             class="text-body text-body--sm text-body--bold text-body--secondary"

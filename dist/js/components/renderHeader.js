@@ -1,14 +1,13 @@
 export function renderHeader() {
-    const header = document.getElementById("header");
-    if (!header)
-        return;
-    const localStorageItems = JSON.parse(localStorage.getItem("cart") || "[]");
-    let totalQuantityValue = 0;
-    const quantityItems = localStorageItems.reduce((total, item) => {
-        return total + item.quantity;
-    }, totalQuantityValue);
-    totalQuantityValue = quantityItems;
-    header.innerHTML = `
+  const header = document.getElementById("header");
+  if (!header) return;
+  const localStorageItems = JSON.parse(localStorage.getItem("cart") || "[]");
+  let totalQuantityValue = 0;
+  const quantityItems = localStorageItems.reduce((total, item) => {
+    return total + item.quantity;
+  }, totalQuantityValue);
+  totalQuantityValue = quantityItems;
+  header.innerHTML = `
   <div class="container">
         <div class="header__content">
           <div class="header__actions">
@@ -30,7 +29,7 @@ export function renderHeader() {
             </a>
           </div>
           <a href="/src/index.html" class="header__logo">
-            <img src="/src/assets/icons/logo.png" class="header__logo-icon" />
+            <img alt="logo" src="/src/assets/icons/logo.png" class="header__logo-icon" alt="logo" />
             <div class="header__logo-text">BEST SHOP</div>
           </a>
           <div class="header__controls">
@@ -121,52 +120,69 @@ export function renderHeader() {
         </form>
       </div>
     `;
-    const loginIcon = document.getElementById("login-user");
-    const modal = document.getElementById("modal");
-    const passwordIcon = document.getElementById("password-icon");
-    const emailInput = document.getElementById("email-modal");
-    const passwordInput = document.getElementById("password-modal");
-    const loginForm = document.getElementById("login-form");
-    const closeIcon = document.getElementById("icon-close");
-    const links = document.querySelectorAll(".nav__item-link");
-    const burger = document.getElementById("burger");
-    const navList = document.getElementById("nav-list");
-    burger === null || burger === void 0 ? void 0 : burger.addEventListener("click", () => {
-        navList === null || navList === void 0 ? void 0 : navList.classList.toggle("nav__list--open");
-    });
-    const currentPath = window.location.pathname;
-    links.forEach((link) => {
-        const linkPath = link.getAttribute("href");
-        if (linkPath === currentPath) {
-            link.classList.add("nav__item-link--active");
-        }
-    });
-    loginIcon === null || loginIcon === void 0 ? void 0 : loginIcon.addEventListener("click", () => {
+  const loginIcon = document.getElementById("login-user");
+  const modal = document.getElementById("modal");
+  const passwordIcon = document.getElementById("password-icon");
+  const emailInput = document.getElementById("email-modal");
+  const passwordInput = document.getElementById("password-modal");
+  const loginForm = document.getElementById("login-form");
+  const closeIcon = document.getElementById("icon-close");
+  const links = document.querySelectorAll(".nav__item-link");
+  const burger = document.getElementById("burger");
+  const navList = document.getElementById("nav-list");
+  burger === null || burger === void 0
+    ? void 0
+    : burger.addEventListener("click", () => {
+        navList === null || navList === void 0
+          ? void 0
+          : navList.classList.toggle("nav__list--open");
+      });
+  const currentPath = window.location.pathname;
+  links.forEach((link) => {
+    const linkPath = link.getAttribute("href");
+    if (linkPath === currentPath) {
+      link.classList.add("nav__item-link--active");
+    }
+  });
+  loginIcon === null || loginIcon === void 0
+    ? void 0
+    : loginIcon.addEventListener("click", () => {
         console.log("click");
-        modal === null || modal === void 0 ? void 0 : modal.classList.remove("modal--hidden");
-    });
-    passwordIcon === null || passwordIcon === void 0 ? void 0 : passwordIcon.addEventListener("click", () => {
+        modal === null || modal === void 0
+          ? void 0
+          : modal.classList.remove("modal--hidden");
+      });
+  passwordIcon === null || passwordIcon === void 0
+    ? void 0
+    : passwordIcon.addEventListener("click", () => {
         if (passwordInput.type === "password") {
-            passwordInput.type = "text";
+          passwordInput.type = "text";
+        } else {
+          passwordInput.type = "password";
         }
-        else {
-            passwordInput.type = "password";
-        }
-    });
-    loginForm === null || loginForm === void 0 ? void 0 : loginForm.addEventListener("submit", (e) => {
+      });
+  loginForm === null || loginForm === void 0
+    ? void 0
+    : loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const emailValue = emailInput.value.trim();
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(emailValue)) {
-            alert("Invalid email");
-            return;
+          alert("Invalid email");
+          return;
         }
         alert("Login OK");
-        modal === null || modal === void 0 ? void 0 : modal.classList.add("modal--hidden");
+        modal === null || modal === void 0
+          ? void 0
+          : modal.classList.add("modal--hidden");
         emailInput.value = "";
         passwordInput.value = "";
-    });
-    closeIcon === null || closeIcon === void 0 ? void 0 : closeIcon.addEventListener("click", () => {
-        modal === null || modal === void 0 ? void 0 : modal.classList.add("modal--hidden");
-    });
+      });
+  closeIcon === null || closeIcon === void 0
+    ? void 0
+    : closeIcon.addEventListener("click", () => {
+        modal === null || modal === void 0
+          ? void 0
+          : modal.classList.add("modal--hidden");
+      });
 }

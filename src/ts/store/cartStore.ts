@@ -3,7 +3,7 @@ import type { CartItem } from "../types/CartItem";
 const CART_KEY = "cart";
 
 export function getLocalStorageCart(): CartItem[] {
-  return JSON.parse(localStorage.getItem(CART_KEY) || "[]") as CartItem[];
+  return JSON.parse(localStorage.getItem(CART_KEY) ?? "[]") as CartItem[];
 }
 
 export function setLocalStorageCart(cart: CartItem[]): void {
@@ -17,9 +17,7 @@ export function clearLocalStorageCart(): void {
 export function addToCart(product: CartItem): void {
   const localStorageItems = getLocalStorageCart();
 
-  const existingItem = localStorageItems.find((item) => {
-    return item.id === product.id;
-  });
+  const existingItem = localStorageItems.find((item) => item.id === product.id);
 
   if (existingItem) {
     const updatedCart = localStorageItems.map((item) => {
@@ -34,13 +32,14 @@ export function addToCart(product: CartItem): void {
     });
 
     setLocalStorageCart(updatedCart);
-  } else {
-    setLocalStorageCart([
-      ...localStorageItems,
-      {
-        ...product,
-        quantity: product.quantity || 1,
-      },
-    ]);
+    return;
   }
+
+  setLocalStorageCart([
+    ...localStorageItems,
+    {
+      ...product,
+      quantity: product.quantity ?? 1,
+    },
+  ]);
 }

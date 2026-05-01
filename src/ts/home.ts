@@ -16,56 +16,62 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 const selectedTiles = document.getElementById("selected-products");
 
-function renderSelectedProducts(products: Product[]) {
+function renderSelectedProducts(products: Product[]): void {
   const filteredProducts = products.filter((prod) =>
     prod.blocks.includes("Selected Products"),
   );
 
   const filteredList = filteredProducts.slice(0, 4);
+
   selectedTiles?.addEventListener("click", (e) => {
-    const button = e.target.closest("button");
+    const target = e.target as HTMLElement;
+    const button = target.closest<HTMLButtonElement>("button");
+
+    if (!button) return;
+
     const buttonId = button.dataset.id;
-    const selectedItem = filteredList.find((item) => {
-      return item.id === buttonId;
-    });
+    const selectedItem = filteredList.find((item) => item.id === buttonId);
 
-    const itemToLocal = { id: selectedItem.id, quantity: 1 };
+    if (!selectedItem) return;
 
-    addToCart(itemToLocal);
+    addToCart({ id: selectedItem.id, quantity: 1 });
     renderHeader();
   });
 
-  return (selectedTiles.innerHTML = `
-    ${filteredList
-      .map(
-        (filterProduct) => `
-      ${renderSuitcaseTile(filterProduct, "Add To Cart")}`,
-      )
-      .join("")}`);
+  if (!selectedTiles) return;
+
+  selectedTiles.innerHTML = filteredList
+    .map((filterProduct) => renderSuitcaseTile(filterProduct, "Add To Cart"))
+    .join("");
 }
 
 const newArrivalsProducts = document.getElementById("new-arrivals-products");
 
-function renderNewArrivalsProducst(products: Product[]) {
+function renderNewArrivalsProducst(products: Product[]): void {
   const filteredProducts = products.filter((prod) =>
     prod.blocks.includes("New Products Arrival"),
   );
 
   const filteredList = filteredProducts.slice(0, 4);
 
-  return (newArrivalsProducts.innerHTML = `${filteredList
-    .map(
-      (filterProduct) => `${renderSuitcaseTile(filterProduct, "View Product")}`,
-    )
-    .join("")}`);
+  if (!newArrivalsProducts) return;
+
+  newArrivalsProducts.innerHTML = filteredList
+    .map((filterProduct) => renderSuitcaseTile(filterProduct, "View Product"))
+    .join("");
 }
 
 newArrivalsProducts?.addEventListener("click", (e) => {
-  const button = e.target.closest("button");
-  const buttonId = button.dataset.id;
+  const target = e.target as HTMLElement;
+  const button = target.closest<HTMLButtonElement>("button");
+
   if (!button) return;
+
+  const buttonId = button.dataset.id;
+
+  if (!buttonId) return;
+
   window.location.href = `/src/html/product-card.html?id=${buttonId}`;
-  console.log(buttonId);
 });
 
 const track = document.querySelector(".travel-products__track");

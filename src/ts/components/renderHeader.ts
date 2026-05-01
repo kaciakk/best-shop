@@ -37,7 +37,7 @@ export function renderHeader(): void {
             </a>
           </div>
           <a href="/src/index.html" class="header__logo">
-            <img src="/src/assets/icons/logo.png" class="header__logo-icon" />
+            <img src="/src/assets/icons/logo.png" class="header__logo-icon" alt="logo" />
             <div class="header__logo-text">BEST SHOP</div>
           </a>
           <div class="header__controls">

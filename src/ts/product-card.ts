@@ -21,38 +21,39 @@ document.addEventListener("DOMContentLoaded", async () => {
   renderProductDetails(allProducts, productId);
 });
 
-const productDetailContent = document.getElementById(
-  "product-content",
-) as HTMLElement | null;
+const productDetailContent = document.getElementById("product-content");
 
 function renderProductDetails(
   products: Product[],
   currentProductId: string | null,
-) {
-  const productDetails = products.find((item) => {
-    return item.id === currentProductId;
-  });
+): void {
+  const productDetails = products.find((item) => item.id === currentProductId);
 
-  return (productDetailContent?.innerHTML = `${renderProductDetailsContent(productDetails)}`);
+  if (!productDetailContent) return;
+
+  productDetailContent.innerHTML = renderProductDetailsContent(productDetails);
 }
 
-const preferList = document.getElementById("prefer-list") as HTMLElement | null;
+const preferList = document.getElementById("prefer-list");
 
-function renderPreferProducts(products: Product[]) {
+function renderPreferProducts(products: Product[]): void {
   const filteredProducts = products.filter((prod) =>
     prod.blocks.includes("You May Also Like"),
   );
-  let randList = [...filteredProducts];
-  randList.sort(() => Math.random() - 0.5);
-  const result = randList.slice(0, 4);
 
-  return (preferList.innerHTML = `
-    ${result.map((res) => `${renderSuitcaseTile(res, "Add To Cart")}`).join("")}`);
+  const randomProducts = [...filteredProducts].sort(() => Math.random() - 0.5);
+  const result = randomProducts.slice(0, 4);
+
+  if (!preferList) return;
+
+  preferList.innerHTML = result
+    .map((product) => renderSuitcaseTile(product, "Add To Cart"))
+    .join("");
 }
 
 productDetailContent?.addEventListener("click", (e: MouseEvent) => {
   const target = e.target as HTMLElement;
-  const button = target.closest("button") as HTMLButtonElement | null;
+  const button = target.closest<HTMLButtonElement>("button");
   if (!button) return;
 
   const buttonAddtoCart = button.id === "add-to-cart-details";
@@ -137,7 +138,7 @@ buttonReviews?.addEventListener("click", () => {
                   <div>
                     <div class="informations__review">
                       <div class="informations__title">
-                        <img src="../assets/Product-Card/review customer.png" />
+                        <img src="../assets/Product-Card/review customer.png" alt="customer"/>
                         <div>
                           <span
                             class="text-body text-body--sm text-body--bold text-body--secondary"

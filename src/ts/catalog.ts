@@ -30,7 +30,7 @@ function renderCatalogSets(products: Product[]) {
       const { imageUrl, rating, price, name } = set;
       return `
         <div class="catalog__set">
-            <img class="catalog__image" src=${imageUrl} />
+            <img alt="${name}" class="catalog__image" src=${imageUrl} />
             <div class="catalog__info">
               <div>${name}</div>
               <div>${rating}</div>
@@ -61,12 +61,8 @@ function searchProduct(products: Product[], value: string) {
 
 const perPage = 12;
 let currentPage = 1;
-const buttonNextPage = document.getElementById(
-  "button-next-page",
-) as HTMLButtonElement | null;
-const buttonPrevPage = document.getElementById(
-  "button-prev-page",
-) as HTMLButtonElement | null;
+const buttonNextPage = document.getElementById("button-next-page");
+const buttonPrevPage = document.getElementById("button-prev-page");
 const buttonsList = document.getElementById("buttons-pages");
 const result = document.getElementById("show-result");
 
@@ -119,31 +115,17 @@ buttonPrevPage?.addEventListener("click", () => {
 });
 
 //VARIABLES
-const sizeSelect = document.getElementById("size") as HTMLSelectElement | null;
-const colorSelect = document.getElementById(
-  "color",
-) as HTMLSelectElement | null;
-const categorySelect = document.getElementById(
-  "category",
-) as HTMLSelectElement | null;
-const salesCheckbox = document.getElementById(
-  "sales",
-) as HTMLInputElement | null;
-const sortingSelect = document.getElementById(
-  "select-sort",
-) as HTMLSelectElement | null;
-const catalog = document.getElementById("catalog__left") as HTMLElement | null;
-const buttonClearFilters = document.getElementById(
-  "clear-filters",
-) as HTMLButtonElement | null;
-const buttonHideFilters = document.getElementById(
-  "hide-filters",
-) as HTMLButtonElement | null;
-const filterContainer = document.getElementById("filter") as HTMLElement | null;
-const filterIcon = document.getElementById("filter-icon") as HTMLElement | null;
-const searchInput = document.getElementById(
-  "search-input",
-) as HTMLInputElement | null;
+const sizeSelect = document.getElementById("size");
+const colorSelect = document.getElementById("color");
+const categorySelect = document.getElementById("category");
+const salesCheckbox = document.getElementById("sales");
+const sortingSelect = document.getElementById("select-sort");
+const catalog = document.getElementById("catalog__left");
+const buttonClearFilters = document.getElementById("clear-filters");
+const buttonHideFilters = document.getElementById("hide-filters");
+const filterContainer = document.getElementById("filter");
+const filterIcon = document.getElementById("filter-icon");
+const searchInput = document.getElementById("search-input");
 
 const filterOptions = {
   size: "",

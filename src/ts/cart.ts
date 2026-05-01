@@ -27,15 +27,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 const cartEmpty = document.getElementById("cart-content");
-const cartItem = document.getElementById(
-  "cart-table-items",
-) as HTMLElement | null;
-const subTotal = document.getElementById(
-  "cart-sub-total",
-) as HTMLElement | null;
-const total = document.getElementById("cart-total") as HTMLElement | null;
-const shipping = document.getElementById("cart-shipping") as HTMLElement | null;
-const discount = document.getElementById("cart-discount") as HTMLElement | null;
+const cartItem = document.getElementById("cart-table-items");
+const subTotal = document.getElementById("cart-sub-total");
+const total = document.getElementById("cart-total");
+const shipping = document.getElementById("cart-shipping");
+const discount = document.getElementById("cart-discount");
 const discountContainer = document.getElementById("cart-discount-container");
 
 function renderCartItems(products: Product[]) {

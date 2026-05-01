@@ -25,36 +25,42 @@ function renderSelectedProducts(products) {
     const filteredProducts = products.filter((prod) => prod.blocks.includes("Selected Products"));
     const filteredList = filteredProducts.slice(0, 4);
     selectedTiles === null || selectedTiles === void 0 ? void 0 : selectedTiles.addEventListener("click", (e) => {
-        const button = e.target.closest("button");
+        const target = e.target;
+        const button = target.closest("button");
+        if (!button)
+            return;
         const buttonId = button.dataset.id;
-        const selectedItem = filteredList.find((item) => {
-            return item.id === buttonId;
-        });
-        const itemToLocal = { id: selectedItem.id, quantity: 1 };
-        addToCart(itemToLocal);
+        const selectedItem = filteredList.find((item) => item.id === buttonId);
+        if (!selectedItem)
+            return;
+        addToCart({ id: selectedItem.id, quantity: 1 });
         renderHeader();
     });
-    return (selectedTiles.innerHTML = `
-    ${filteredList
-        .map((filterProduct) => `
-      ${renderSuitcaseTile(filterProduct, "Add To Cart")}`)
-        .join("")}`);
+    if (!selectedTiles)
+        return;
+    selectedTiles.innerHTML = filteredList
+        .map((filterProduct) => renderSuitcaseTile(filterProduct, "Add To Cart"))
+        .join("");
 }
 const newArrivalsProducts = document.getElementById("new-arrivals-products");
 function renderNewArrivalsProducst(products) {
     const filteredProducts = products.filter((prod) => prod.blocks.includes("New Products Arrival"));
     const filteredList = filteredProducts.slice(0, 4);
-    return (newArrivalsProducts.innerHTML = `${filteredList
-        .map((filterProduct) => `${renderSuitcaseTile(filterProduct, "View Product")}`)
-        .join("")}`);
+    if (!newArrivalsProducts)
+        return;
+    newArrivalsProducts.innerHTML = filteredList
+        .map((filterProduct) => renderSuitcaseTile(filterProduct, "View Product"))
+        .join("");
 }
 newArrivalsProducts === null || newArrivalsProducts === void 0 ? void 0 : newArrivalsProducts.addEventListener("click", (e) => {
-    const button = e.target.closest("button");
-    const buttonId = button.dataset.id;
+    const target = e.target;
+    const button = target.closest("button");
     if (!button)
         return;
+    const buttonId = button.dataset.id;
+    if (!buttonId)
+        return;
     window.location.href = `/src/html/product-card.html?id=${buttonId}`;
-    console.log(buttonId);
 });
 const track = document.querySelector(".travel-products__track");
 const tiles = document.querySelectorAll(".travel-products__tile");

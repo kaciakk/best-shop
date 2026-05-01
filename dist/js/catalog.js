@@ -34,7 +34,7 @@ function renderCatalogSets(products) {
         const { imageUrl, rating, price, name } = set;
         return `
         <div class="catalog__set">
-            <img class="catalog__image" src=${imageUrl} />
+            <img alt="${name}" class="catalog__image" src=${imageUrl} />
             <div class="catalog__info">
               <div>${name}</div>
               <div>${rating}</div>
