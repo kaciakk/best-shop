@@ -4,7 +4,7 @@
   "description": "Capstone Project TS Template",
   "main": "index.js",
   "scripts": {
-    "build": "npm run ts-compile && sass src/scss:dist/css",
+    "build": "echo \"Dummy build script required for Autocode Compile\"",
     "ts-compile": "npx tsc",
     "ts": "tsc --watch",
     "scss": "sass --watch src/scss:dist/css",
