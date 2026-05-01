@@ -178,7 +178,7 @@ sortingSelect?.addEventListener("change", () => {
 catalog?.addEventListener("click", (event: MouseEvent) => {
   const target = event.target as HTMLElement;
 
-  const button = target.closest("button") as HTMLButtonElement | null;
+  const button = target.closest<HTMLButtonElement>("button");
   if (!button) return;
 
   const buttonId = button.dataset.id;

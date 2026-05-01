@@ -94,14 +94,15 @@ function renderCartItems(products: Product[]) {
     if (!cartItem) return;
 
     cartItem.innerHTML = cart.map((res) => renderCartItem(res)).join("");
-  } else {
-    if (cartEmpty) {
-      cartEmpty.innerHTML = `
-      <h2 class="text-title text-title--lg text-title--primary">
-        Your cart is empty. Use the catalog to add new items.
-      </h2>
-    `;
-    }
+    return;
+  }
+
+  if (cartEmpty) {
+    cartEmpty.innerHTML = `
+    <h2 class="text-title text-title--lg text-title--primary">
+      Your cart is empty. Use the catalog to add new items.
+    </h2>
+  `;
   }
 }
 
@@ -121,16 +122,10 @@ checkoutButtonCart?.addEventListener("click", () => {
 });
 
 cartItem?.addEventListener("click", (e: MouseEvent) => {
-  const target = e.target as HTMLElement;
-  const removeButton = target.closest(
-    ".cart__table-cell-icon",
-  ) as HTMLElement | null;
-  const quantityAddButton = target.closest(
-    ".cart__quantity-add-button",
-  ) as HTMLElement | null;
-  const quantitySubButton = target.closest(
-    ".cart__quantity-sub-button",
-  ) as HTMLElement | null;
+  const target = e.target;
+  const removeButton = target.closest(".cart__table-cell-icon");
+  const quantityAddButton = target.closest(".cart__quantity-add-button");
+  const quantitySubButton = target.closest(".cart__quantity-sub-button");
 
   const localStorageItems = getLocalStorageCart();
 
@@ -174,6 +169,5 @@ cartItem?.addEventListener("click", (e: MouseEvent) => {
     setLocalStorageCart(updatedCart);
     renderCartItems(allProducts);
     renderHeader();
-    return;
   }
 });

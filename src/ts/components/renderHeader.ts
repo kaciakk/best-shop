@@ -4,7 +4,7 @@ export function renderHeader(): void {
   const header = document.getElementById("header");
   if (!header) return;
 
-  const localStorageItems = JSON.parse(localStorage.getItem("cart") || "[]");
+  const localStorageItems = JSON.parse(localStorage.getItem("cart") ?? "[]");
 
   let totalQuantityValue = 0;
   const quantityItems = localStorageItems.reduce(

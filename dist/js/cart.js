@@ -67,15 +67,14 @@ function renderCartItems(products) {
         if (!cartItem)
             return;
         cartItem.innerHTML = cart.map((res) => renderCartItem(res)).join("");
+        return;
     }
-    else {
-        if (cartEmpty) {
-            cartEmpty.innerHTML = `
-      <h2 class="text-title text-title--lg text-title--primary">
-        Your cart is empty. Use the catalog to add new items.
-      </h2>
-    `;
-        }
+    if (cartEmpty) {
+        cartEmpty.innerHTML = `
+    <h2 class="text-title text-title--lg text-title--primary">
+      Your cart is empty. Use the catalog to add new items.
+    </h2>
+  `;
     }
 }
 const clearButtonCart = document.getElementById("cart-button-clear");
@@ -138,6 +137,5 @@ cartItem === null || cartItem === void 0 ? void 0 : cartItem.addEventListener("c
         setLocalStorageCart(updatedCart);
         renderCartItems(allProducts);
         renderHeader();
-        return;
     }
 });
