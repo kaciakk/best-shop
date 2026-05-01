@@ -1,3 +1,5 @@
+import type { CartProduct } from "../types/CartProduct";
+
 export function renderHeader(): void {
   const header = document.getElementById("header");
   if (!header) return;
@@ -5,9 +7,12 @@ export function renderHeader(): void {
   const localStorageItems = JSON.parse(localStorage.getItem("cart") || "[]");
 
   let totalQuantityValue = 0;
-  const quantityItems = localStorageItems.reduce((total, item) => {
-    return total + item.quantity;
-  }, totalQuantityValue);
+  const quantityItems = localStorageItems.reduce(
+    (total: number, item: CartProduct) => {
+      return total + item.quantity;
+    },
+    totalQuantityValue,
+  );
   totalQuantityValue = quantityItems;
 
   header.innerHTML = `
@@ -52,7 +57,8 @@ export function renderHeader(): void {
         </div>
         <nav class="nav">
           <div class="nav__content">
-            <ul class="nav__list">
+           <div class="nav__burger" id="burger">☰</div>
+            <ul id="nav-list" class="nav__list">
               <li class="nav__item">
                 <a href="/src/index.html" class="nav__item-link">Home</a>
               </li>
@@ -131,6 +137,12 @@ export function renderHeader(): void {
   const loginForm = document.getElementById("login-form");
   const closeIcon = document.getElementById("icon-close");
   const links = document.querySelectorAll(".nav__item-link");
+  const burger = document.getElementById("burger");
+  const navList = document.getElementById("nav-list");
+
+  burger?.addEventListener("click", () => {
+    navList?.classList.toggle("nav__list--open");
+  });
 
   const currentPath = window.location.pathname;
 

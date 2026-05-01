@@ -76,7 +76,9 @@ function renderPage(products: Product[]): void {
   const start = (currentPage - 1) * perPage;
   const end = start + perPage;
   const totalPages = Math.ceil(products.length / perPage);
-  result?.innerText = `Showing ${start + 1}-${Math.min(end, visibleCatalog.length)} Of ${visibleCatalog.length} Results`;
+  if (result) {
+    result.innerText = `Showing ${start + 1}-${Math.min(end, visibleCatalog.length)} Of ${visibleCatalog.length} Results`;
+  }
   buttonNextPage.disabled = currentPage >= totalPages;
   buttonPrevPage.disabled = currentPage <= 1;
 

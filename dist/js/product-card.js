@@ -43,7 +43,8 @@ function renderPreferProducts(products) {
     ${result.map((res) => `${renderSuitcaseTile(res, "Add To Cart")}`).join("")}`);
 }
 productDetailContent === null || productDetailContent === void 0 ? void 0 : productDetailContent.addEventListener("click", (e) => {
-    const button = e.target.closest("button");
+    const target = e.target;
+    const button = target.closest("button");
     if (!button)
         return;
     const buttonAddtoCart = button.id === "add-to-cart-details";

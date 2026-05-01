@@ -1,4 +1,6 @@
-export function renderProductDetailsContent(product) {
+import type { Product } from "../types/Product";
+
+export function renderProductDetailsContent(product: Product) {
   const { id, name, rating, price, imageUrl } = product;
   return `
 <div class="product-card__left">

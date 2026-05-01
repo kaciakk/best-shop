@@ -9,11 +9,20 @@
   }
 
   &__items {
-    @include flex(space-between, stretch, row, 1rem);
+    @include flex(center, stretch, column, 1rem);
     width: 100%;
+
+    @include respond-up(tablet) {
+      @include grid(2, 1rem);
+    }
+
+    @include respond-up(laptop) {
+      @include flex(space-between, stretch, row, 1rem);
+    }
   }
 
   &__title {
     border-bottom: 2px solid $color-text-primary;
+    text-align: center;
   }
 }

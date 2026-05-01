@@ -4,6 +4,7 @@ import { getProducts } from "./api/getProducts.js";
 import { renderSuitcaseTile } from "./components/renderSuitcaseTile.js";
 import { renderLayout } from "./components/renderLayout.js";
 import { addToCart } from "./store/cartStore.js";
+import type { Product } from "./types/Product.js";
 document.addEventListener("DOMContentLoaded", async () => {
   renderLayout();
   renderDiscount();
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 const selectedTiles = document.getElementById("selected-products");
 
-function renderSelectedProducts(products) {
+function renderSelectedProducts(products: Product[]) {
   const filteredProducts = products.filter((prod) =>
     prod.blocks.includes("Selected Products"),
   );
@@ -45,7 +46,7 @@ function renderSelectedProducts(products) {
 
 const newArrivalsProducts = document.getElementById("new-arrivals-products");
 
-function renderNewArrivalsProducst(products) {
+function renderNewArrivalsProducst(products: Product[]) {
   const filteredProducts = products.filter((prod) =>
     prod.blocks.includes("New Products Arrival"),
   );

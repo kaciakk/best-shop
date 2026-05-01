@@ -10,7 +10,16 @@
       url("/src/assets/Homepage/discount-banner.png");
     @include bg-cover;
     width: 100%;
-    padding: 6rem 0;
+    padding: 4rem 1rem;
+
+    @include respond-up(tablet) {
+      @include grid(2);
+      padding: 5rem 2rem;
+    }
+
+    @include respond-up(laptop) {
+      padding: 6rem 0;
+    }
   }
 
   &__left {
@@ -18,18 +27,39 @@
   }
 
   &__percent {
-    font-size: 220px;
+    font-size: 120px;
     line-height: 1;
+
+    @include respond-up(tablet) {
+      font-size: 180px;
+    }
+
+    @include respond-up(laptop) {
+      font-size: 220px;
+    }
   }
 
   &__right {
     @include flex(space-between, flex-start, column);
-    padding: 0 8rem;
+    padding: 0 1rem;
+
+    @include respond-up(tablet) {
+      padding: 0 4rem;
+    }
+
+    @include respond-up(laptop) {
+      padding: 0 8rem;
+    }
   }
 
   &__button {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     cursor: pointer;
+
+    @include respond-up(tablet) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   }
 }

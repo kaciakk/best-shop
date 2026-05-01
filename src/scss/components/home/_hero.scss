@@ -6,19 +6,33 @@
   padding-bottom: 4rem;
 
   &__content {
-    @include grid(2);
+    @include grid(1);
     align-items: center;
     justify-content: center;
-    padding-top: 4rem;
+    padding-top: 2rem;
+
+    @include respond-up(tablet) {
+      @include grid(2);
+      padding-top: 4rem;
+    }
   }
 
   &__left {
     @include flex($direction: column, $gap: 2rem);
-    padding-right: 2rem;
+    padding-right: 0;
+
+    @include respond-up(tablet) {
+      padding-right: 2rem;
+    }
   }
 
   &__image {
     @include flex(center, center);
+    order: -1;
+
+    @include respond-up(tablet) {
+      order: 0;
+    }
   }
 
   &__image img {

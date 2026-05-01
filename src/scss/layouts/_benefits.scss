@@ -21,7 +21,7 @@
 
     background-repeat: no-repeat;
     background-position:
-      top 0px left 0,
+      top 0 left 0,
       top 30px left 0,
       top 60px left 0,
       top 90px left 0,
@@ -37,10 +37,20 @@
     @include flex($direction: column, $gap: 2rem);
     padding-top: 2rem;
     padding-bottom: 2rem;
+    position: relative;
+    z-index: 1;
   }
 
   &__items {
-    @include grid(4, 4rem);
+    @include grid(1, 2rem);
+
+    @include respond-up(tablet) {
+      @include grid(2, 2rem);
+    }
+
+    @include respond-up(laptop) {
+      @include grid(4, 4rem);
+    }
   }
 
   &__item {
@@ -48,8 +58,12 @@
   }
 
   &__icon {
-    width: 60px;
+    width: 50px;
     aspect-ratio: 1;
+
+    @include respond-up(tablet) {
+      width: 60px;
+    }
   }
 
   &__icon img {

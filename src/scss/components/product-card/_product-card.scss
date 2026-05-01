@@ -5,8 +5,12 @@
   margin-bottom: 6rem;
 
   &__content {
-    @include grid(2);
+    @include grid(1, 2rem);
     width: 100%;
+
+    @include respond-up(tablet) {
+      @include grid(2, 2rem);
+    }
   }
 
   &__left {
@@ -46,7 +50,11 @@
 
   &__right {
     @include flex(space-between, stretch, column, 2rem);
-    padding: 0 3rem;
+    padding: 0;
+
+    @include respond-up(tablet) {
+      padding: 0 3rem;
+    }
   }
 
   &__form {
@@ -68,7 +76,11 @@
   }
 
   &__buttons-form {
-    @include flex($gap: 2rem);
+    @include flex($direction: column, $gap: 1rem);
+
+    @include respond-up(tablet) {
+      @include flex($gap: 2rem);
+    }
   }
 
   &__buttons-form button {

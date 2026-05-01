@@ -1,4 +1,6 @@
-export function filterCatalog(products, filter) {
+import type { Product } from "../types/Product";
+
+export function filterCatalog(products: Product[], filter) {
   let result = [...products];
 
   if (filter.size) {

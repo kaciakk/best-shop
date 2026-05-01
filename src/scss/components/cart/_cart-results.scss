@@ -5,22 +5,39 @@
   margin-bottom: 6rem;
 
   &__content {
-    @include grid(2);
+    @include grid(1, 2rem);
+
+    @include respond-up(tablet) {
+      @include grid(2);
+    }
   }
 
   &__left {
-    @include flex($gap: 1rem);
+    @include flex($direction: column, $gap: 1rem);
+
+    @include respond-up(tablet) {
+      @include flex($gap: 1rem);
+    }
   }
 
   &__left button {
     max-width: 270px;
     max-height: 50px;
+    width: 100%;
+
+    @include respond-up(tablet) {
+      width: auto;
+    }
   }
 
   &__right {
     @include flex($direction: column);
     background-color: $color-backgorund-secondary;
-    padding: 2rem;
+    padding: 1.5rem;
+
+    @include respond-up(tablet) {
+      padding: 2rem;
+    }
   }
 
   &__checkout {
@@ -43,6 +60,10 @@
   }
 
   &__checkout-button {
-    width: 50%;
+    width: 100%;
+
+    @include respond-up(tablet) {
+      width: 50%;
+    }
   }
 }

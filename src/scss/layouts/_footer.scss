@@ -6,11 +6,37 @@
 
   &__content {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas:
-      "about links achievemetns . contact contact"
-      "shipping shipping shipping . information1 information2";
     gap: 2rem;
+
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "about"
+      "links"
+      "achievemetns"
+      "contact"
+      "shipping"
+      "information1"
+      "information2";
+
+    @include respond-up(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "about links"
+        "achievemetns contact"
+        "shipping shipping"
+        "information1 information2";
+    }
+
+    @include respond-up(laptop) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        "about links achievemetns . contact contact"
+        "shipping shipping shipping . information1 information2";
+    }
+
+    @include respond-up(desktop) {
+      gap: 3rem;
+    }
   }
 
   &__about {
@@ -45,8 +71,7 @@
 
   &__items {
     @include flex($direction: column, $gap: 0.5rem);
-    padding-bottom: 2rem;
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
   }

@@ -10,26 +10,44 @@
   &__title {
     @include flex(center, center, column, 1rem);
     padding-bottom: 4rem;
+    text-align: center;
   }
 
   &__tiles {
-    @include grid(3, 2rem);
+    @include grid(1, 1.5rem);
     justify-content: center;
     align-items: flex-start;
     width: 100%;
     padding-bottom: 2rem;
+
+    @include respond-up(tablet) {
+      @include grid(2, 2rem);
+    }
+
+    @include respond-up(laptop) {
+      @include grid(3, 2rem);
+    }
   }
 
   &__tile {
     @include flex(space-evenly, center, column);
-    min-height: 340px;
+    min-height: 300px;
     box-shadow: 0 10px 30px #c1c7d4b3;
     padding: 0 2rem;
+
+    @include respond-up(laptop) {
+      min-height: 340px;
+    }
   }
 
   &__avatar {
-    width: 95px;
-    height: 95px;
+    width: 80px;
+    height: 80px;
+
+    @include respond-up(tablet) {
+      width: 95px;
+      height: 95px;
+    }
   }
 
   &__avatar img {

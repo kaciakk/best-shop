@@ -4,13 +4,21 @@
 .hero-about {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("../../src/assets/About/banner-about.jpg");
+    url("/src/assets/About/banner-about.jpg");
 
   @include bg-cover;
 
   width: 100%;
-  aspect-ratio: 3/1;
+  aspect-ratio: 3 / 1;
   margin-bottom: 6rem;
+
+  @include respond-up(tablet) {
+    aspect-ratio: 3 / 1;
+  }
+
+  @include respond-up(laptop) {
+    margin-bottom: 6rem;
+  }
 
   &__content {
     @include flex(center, center, column, 2rem);

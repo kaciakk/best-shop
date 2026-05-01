@@ -8,8 +8,13 @@
   }
 
   &__navigation {
-    @include flex(space-evenly);
+    @include flex(center, center, column, 1rem);
     margin-bottom: 2rem;
+
+    @include respond-up(tablet) {
+      @include flex(space-evenly);
+      flex-direction: row;
+    }
   }
 
   &__description {
@@ -17,11 +22,17 @@
   }
 
   &__reviews {
-    @include grid(2);
+    @include grid(1, 2rem);
+
+    @include respond-up(tablet) {
+      @include grid(2, 2rem);
+    }
   }
+
   &__review {
     @include flex(space-between, flex-start, $gap: 1rem);
   }
+
   &__title {
     @include flex($gap: 1rem);
     margin-bottom: 1rem;
@@ -29,13 +40,22 @@
 
   &__left {
     display: grid;
-    grid-template-rows: 100px 3fr;
-    padding-right: 4rem;
+    grid-template-rows: auto 1fr;
+    padding-right: 0;
+
+    @include respond-up(tablet) {
+      grid-template-rows: 100px 3fr;
+      padding-right: 4rem;
+    }
   }
 
   &__right {
     display: grid;
-    grid-template-rows: 100px 3fr;
+    grid-template-rows: auto 1fr;
+
+    @include respond-up(tablet) {
+      grid-template-rows: 100px 3fr;
+    }
   }
 
   &__adding {
@@ -47,7 +67,12 @@
   }
 
   &__form-name {
-    @include flex($gap: 2rem);
+    @include flex($direction: column, $gap: 1rem);
+
+    @include respond-up(tablet) {
+      flex-direction: row;
+      gap: 2rem;
+    }
   }
 
   &__form-container {

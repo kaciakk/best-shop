@@ -2,16 +2,28 @@
 
 .catalog {
   &__content {
-    @include grid(2, 2rem);
-    grid-template-columns: 3fr 1fr;
-    margin-bottom: 2rem;
+    @include grid(1, 2rem);
+    margin-bottom: 4rem;
+
+    @include respond-up(laptop) {
+      @include grid(2, 2rem);
+      grid-template-columns: 3fr 1fr;
+    }
   }
 
   &__left {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
     width: 100%;
+
+    @include respond-up(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-up(laptop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &__right {
@@ -45,16 +57,26 @@
 
 .pagination {
   &__content {
-    @include grid(2, 2rem);
-    grid-template-columns: 3fr 1fr;
+    @include grid(1, 2rem);
     margin-bottom: 2rem;
+
+    @include respond-up(laptop) {
+      @include grid(2, 2rem);
+      grid-template-columns: 3fr 1fr;
+    }
   }
 
   &__left {
-    @include flex(space-around);
+    @include flex(center, center, column, 1rem);
+
+    @include respond-up(tablet) {
+      @include flex(space-around);
+      flex-direction: row;
+    }
   }
 
   &__pages {
     @include flex($gap: 1rem);
+    flex-wrap: wrap;
   }
 }

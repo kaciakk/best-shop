@@ -4,27 +4,50 @@
   margin-bottom: 6rem;
 
   &__content {
-    @include grid(2);
-    margin-top: -150px;
+    @include grid(1);
+    margin-top: -80px;
     background-color: white;
     box-shadow: 0 10px 30px #c1c7d4b3;
+
+    @include respond-up(tablet) {
+      @include grid(2);
+      margin-top: -150px;
+    }
   }
 
   &__left {
     display: grid;
-    grid-template-rows: 120px 1fr;
-    padding: 4rem 6rem 16rem 6rem;
+    grid-template-rows: auto 1fr;
+    padding: 2rem;
     gap: 1rem;
+
+    @include respond-up(tablet) {
+      grid-template-rows: 120px 1fr;
+      padding: 4rem 3rem 8rem 3rem;
+    }
+
+    @include respond-up(laptop) {
+      padding: 4rem 6rem 16rem 6rem;
+    }
   }
 
   &__profile {
-    @include flex(flex-start, center, $gap: 2rem);
+    @include flex(flex-start, center, $gap: 1rem);
+
+    @include respond-up(tablet) {
+      gap: 2rem;
+    }
   }
 
   &__profile-image {
-    width: 100px;
-    height: 110px;
+    width: 80px;
+    height: 90px;
     aspect-ratio: 1;
+
+    @include respond-up(tablet) {
+      width: 100px;
+      height: 110px;
+    }
   }
 
   &__profile-image img {
@@ -38,19 +61,33 @@
   }
 
   &__description {
-    @include flex($direction: column, $gap: 2rem);
+    @include flex($direction: column, $gap: 1.5rem);
+
+    @include respond-up(tablet) {
+      gap: 2rem;
+    }
   }
 
   &__right {
     display: grid;
-    grid-template-rows: 120px 1fr;
-    padding: 4rem 12rem 16rem 6rem;
+    grid-template-rows: auto 1fr;
+    padding: 2rem;
     gap: 1rem;
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url("../../src/assets/Homepage/suitcases-main-banner.png");
+      url("/src/assets/Homepage/suitcases-main-banner.png");
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 420px;
+
+    @include respond-up(tablet) {
+      grid-template-rows: 120px 1fr;
+      padding: 4rem 4rem 8rem 4rem;
+    }
+
+    @include respond-up(laptop) {
+      padding: 4rem 12rem 16rem 6rem;
+    }
   }
 
   &__right-content {

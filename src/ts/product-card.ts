@@ -5,8 +5,9 @@ import { renderSuitcaseTile } from "./components/renderSuitcaseTile.js";
 import { getProducts } from "./api/getProducts.js";
 import { renderProductDetailsContent } from "./components/renderProductDetailsContent.js";
 import { addToCart } from "./store/cartStore.js";
+import type { Product } from "./types/Product.js";
 
-let allProducts = [];
+let allProducts: Product[] = [];
 let quantity = 1;
 document.addEventListener("DOMContentLoaded", async () => {
   renderHeader();
@@ -20,9 +21,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   renderProductDetails(allProducts, productId);
 });
 
-const productDetailContent = document.getElementById("product-content");
+const productDetailContent = document.getElementById(
+  "product-content",
+) as HTMLElement | null;
 
-function renderProductDetails(products, currentProductId) {
+function renderProductDetails(
+  products: Product[],
+  currentProductId: string | null,
+) {
   const productDetails = products.find((item) => {
     return item.id === currentProductId;
   });
@@ -30,9 +36,9 @@ function renderProductDetails(products, currentProductId) {
   return (productDetailContent?.innerHTML = `${renderProductDetailsContent(productDetails)}`);
 }
 
-const preferList = document.getElementById("prefer-list");
+const preferList = document.getElementById("prefer-list") as HTMLElement | null;
 
-function renderPreferProducts(products) {
+function renderPreferProducts(products: Product[]) {
   const filteredProducts = products.filter((prod) =>
     prod.blocks.includes("You May Also Like"),
   );
@@ -44,8 +50,9 @@ function renderPreferProducts(products) {
     ${result.map((res) => `${renderSuitcaseTile(res, "Add To Cart")}`).join("")}`);
 }
 
-productDetailContent?.addEventListener("click", (e) => {
-  const button = e.target.closest("button");
+productDetailContent?.addEventListener("click", (e: MouseEvent) => {
+  const target = e.target as HTMLElement;
+  const button = target.closest("button") as HTMLButtonElement | null;
   if (!button) return;
 
   const buttonAddtoCart = button.id === "add-to-cart-details";

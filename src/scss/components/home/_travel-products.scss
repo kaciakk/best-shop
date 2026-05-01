@@ -10,6 +10,7 @@
   &__title {
     @include flex(center, center, column);
     margin-bottom: 4rem;
+    text-align: center;
   }
 
   &__tiles {
@@ -26,7 +27,7 @@
 
   &__tile {
     @include flex;
-    flex: 0 0 300px;
+    flex: 0 0 90%;
 
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -34,12 +35,16 @@
 
     @include bg-cover;
 
-    max-width: 400px;
     padding: 2rem;
-    aspect-ratio: 2 / 4;
-    &:hover {
-      transform: scale(0.99);
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    aspect-ratio: 1 / 1.5;
+
+    @include respond-up(tablet) {
+      flex: 0 0 calc((100% - 16px) / 2.3);
+      aspect-ratio: 2 / 4;
+    }
+
+    @include respond-up(laptop) {
+      flex: 0 0 calc((100% - 32px) / 4.8);
     }
 
     &--2 {
@@ -65,10 +70,16 @@
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url("/src/assets/Homepage/suitcase-real-live.png");
     }
+
     &--6 {
       background-image:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url("/src/assets/Homepage/suitcase-real-live-1.png");
+    }
+
+    &:hover {
+      transform: scale(0.99);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
     }
   }
 
@@ -84,8 +95,8 @@
     transform: translateY(-50%);
     z-index: 10;
 
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: none;
 
@@ -98,6 +109,11 @@
 
     cursor: pointer;
     transition: all 0.3s ease;
+
+    @include respond-up(tablet) {
+      width: 48px;
+      height: 48px;
+    }
   }
 
   &__prev:hover,
