@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "echo \"Dummy build script required for Autocode Compile\"",
-    "vercel-build": "npm run ts-compile && sass src/scss:dist/css",
+    "vercel-build": "sass src/scss:dist/css",
     "ts-compile": "npx tsc",
     "ts": "tsc --watch",
     "scss": "sass --watch src/scss:dist/css",
-    "serve": "live-server . --entry-file=src/index.html",
+    "serve": "live-server .",
     "dev": "concurrently \"npm run ts\" \"npm run scss\" \"npm run serve\""
   },
   "repository": {
