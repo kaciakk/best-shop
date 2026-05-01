@@ -86,7 +86,8 @@ export function renderHeader() {
             <label for="login" class="modal__label modal__label--required">
               Email address
             </label>
-            <input type="email" id="email-modal" class="input modal__input"  required/>
+            <div class="modal__input-field">
+            <input type="email" id="email-modal" class="input modal__input"  required/></div>
           </div>
 
           <div class="modal__field">
