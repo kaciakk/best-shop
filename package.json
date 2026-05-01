@@ -4,12 +4,11 @@
   "description": "Capstone Project TS Template",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo \"Dummy build script required for Autocode Compile\"",
+    "build": "npm run ts-compile && sass src/scss:dist/css",
     "ts-compile": "npx tsc",
     "ts": "tsc --watch",
     "scss": "sass --watch src/scss:dist/css",
-    "serve": "live-server .",
+    "serve": "live-server . --entry-file=src/index.html",
     "dev": "concurrently \"npm run ts\" \"npm run scss\" \"npm run serve\""
   },
   "repository": {
