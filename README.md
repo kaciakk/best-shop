@@ -1,5 +1,7 @@
 # 🧳 Best Shop – E-commerce Frontend
 
+Live: https://bestshopkaciak.netlify.app/
+
 Simple e-commerce frontend application built with TypeScript, SCSS and modular architecture.  
 The project includes product catalog, product details, cart functionality and responsive layout.
 
