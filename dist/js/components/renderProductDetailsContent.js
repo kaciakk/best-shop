@@ -7,16 +7,16 @@ export function renderProductDetailsContent(product) {
               </div>
               <div class="product-card__small-images">
                 <div class="product-card__small-image">
-                  <img src="../assets/Product-Card/yellow-open1.png" alt="${name}" />
+                  <img src="./assets/Product-Card/yellow-open1.png" alt="${name}" />
                 </div>
                 <div class="product-card__small-image">
-                  <img src="../assets/Product-Card/suitcase-small-2.png" alt="${name}" />
+                  <img src="./assets/Product-Card/suitcase-small-2.png" alt="${name}" />
                 </div>
                 <div class="product-card__small-image">
-                  <img src="../assets/Product-Card/suitcase-small-4.png" alt="${name}" />
+                  <img src="./assets/Product-Card/suitcase-small-4.png" alt="${name}" />
                 </div>
                 <div class="product-card__small-image">
-                  <img src="../assets/Product-Card/suitcase-small-card-1.png" alt="${name}" />
+                  <img src="./assets/Product-Card/suitcase-small-card-1.png" alt="${name}" />
                 </div>
               </div>
             </div>
@@ -89,18 +89,18 @@ export function renderProductDetailsContent(product) {
                   >Payment:</span
                 >
                 <svg class="product-card__icon">
-                  <use href="/src/assets/icons/icons.svg#icon-visa"></use>
+                  <use href="./assets/icons/icons.svg#icon-visa"></use>
                 </svg>
                 <svg class="product-card__icon">
                   <use
-                    href="/src/assets/icons/icons.svg#icon-american-express"
+                    href="./assets/icons/icons.svg#icon-american-express"
                   ></use>
                 </svg>
                 <svg class="product-card__icon">
-                  <use href="/src/assets/icons/icons.svg#icon-mastercard"></use>
+                  <use href="./assets/icons/icons.svg#icon-mastercard"></use>
                 </svg>
                 <svg class="product-card__icon">
-                  <use href="/src/assets/icons/icons.svg#icon-paypal"></use>
+                  <use href="./assets/icons/icons.svg#icon-paypal"></use>
                 </svg>
               </div>
             </div>`;

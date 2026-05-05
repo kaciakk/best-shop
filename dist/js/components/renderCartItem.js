@@ -23,7 +23,7 @@ export function renderCartItem(cart) {
             <td class="cart__table-cell">$${price * quantity}</td>
             <td class="cart__table-cell">
               <svg data-id="${id}" class="cart__table-cell-icon">
-                <use href="/src/assets/icons/icons.svg#icon-delete"></use>
+                <use href="./assets/icons/icons.svg#icon-delete"></use>
               </svg>
             </td>
           </tr>`;

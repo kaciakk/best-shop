@@ -126,7 +126,7 @@ buttonReviews === null || buttonReviews === void 0 ? void 0 : buttonReviews.addE
                   <div>
                     <div class="informations__review">
                       <div class="informations__title">
-                        <img src="../assets/Product-Card/review customer.png" alt="customer"/>
+                        <img src="./assets/Product-Card/review customer.png" alt="customer"/>
                         <div>
                           <span
                             class="text-body text-body--sm text-body--bold text-body--secondary"

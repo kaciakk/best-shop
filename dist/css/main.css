@@ -394,7 +394,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/src/assets/Homepage/wave-line.svg"), url("/src/assets/Homepage/wave-line.svg"), url("/src/assets/Homepage/wave-line.svg"), url("/src/assets/Homepage/wave-line.svg"), url("/src/assets/Homepage/wave-line.svg"), url("/src/assets/Homepage/wave-line.svg");
+  background-image: url("./assets/Homepage/wave-line.svg"), url("./assets/Homepage/wave-line.svg"), url("./assets/Homepage/wave-line.svg"), url("./assets/Homepage/wave-line.svg"), url("./assets/Homepage/wave-line.svg"), url("./assets/Homepage/wave-line.svg");
   background-repeat: no-repeat;
   background-position: top 0 left 0, top 30px left 0, top 60px left 0, top 90px left 0, top 120px left 0, top 150px left 0;
   background-size: 100% auto;
@@ -563,7 +563,7 @@ a {
   gap: 0;
   flex: 1 1 300px;
   flex-wrap: wrap;
-  background-image: url("/src/assets/Homepage/suitcase real-live-3.png");
+  background-image: url("./assets/Homepage/suitcase real-live-3.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -690,7 +690,7 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4)), url("/src/assets/Homepage/discount-banner.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4)), url("./assets/Homepage/discount-banner.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1081,7 +1081,7 @@ a {
   grid-template-rows: auto 1fr;
   padding: 2rem;
   gap: 1rem;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/Homepage/suitcases-main-banner.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/Homepage/suitcases-main-banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 420px;
@@ -1226,7 +1226,7 @@ a {
   flex-direction: row;
   gap: 0;
   flex: 0 0 90%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/Homepage/suitcase-real-live.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/Homepage/suitcase-real-live.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1245,19 +1245,19 @@ a {
   }
 }
 .travel-products__tile--2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/Homepage/suitcase-real-live-1.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/Homepage/suitcase-real-live-1.png");
 }
 .travel-products__tile--3 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/Homepage/suitcase-real-live-2.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/Homepage/suitcase-real-live-2.png");
 }
 .travel-products__tile--4 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/Homepage/suitcase-real-live-3.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/Homepage/suitcase-real-live-3.png");
 }
 .travel-products__tile--5 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/Homepage/suitcase-real-live.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/Homepage/suitcase-real-live.png");
 }
 .travel-products__tile--6 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/Homepage/suitcase-real-live-1.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/Homepage/suitcase-real-live-1.png");
 }
 .travel-products__tile:hover {
   transform: scale(0.99);
@@ -1356,7 +1356,7 @@ a {
 }
 
 .hero-about {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/About/banner-about.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/About/banner-about.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1504,7 +1504,7 @@ a {
 }
 
 .hero-contact {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/src/assets/Contact/banner-image.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/Contact/banner-image.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -2249,7 +2249,7 @@ a {
 
 .hero-cart {
   margin-bottom: 6rem;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../src/assets/Cart/banner-image.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../assets/Cart/banner-image.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

@@ -52,7 +52,7 @@ function searchProduct(products: Product[], value: string) {
   });
 
   if (currentSearch) {
-    window.location.href = `/src/html/product-card.html?id=${currentSearch.id}`;
+    window.location.href = `./product-card.html?id=${currentSearch.id}`;
   } else {
     alert("Product not found");
   }

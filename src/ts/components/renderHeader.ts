@@ -21,35 +21,35 @@ export function renderHeader(): void {
           <div class="header__actions">
             <a href="#" class="header__action">
               <svg class="header__action-icon">
-                <use href="/src/assets/icons/icons.svg#icon-facebook"></use>
+                <use href="./assets/icons/icons.svg#icon-facebook"></use>
               </svg>
             </a>
             <a href="#" class="header__action">
               <svg class="header__action-icon">
-                <use href="/src/assets/icons/icons.svg#icon-twitter"></use>
+                <use href="./assets/icons/icons.svg#icon-twitter"></use>
               </svg>
             </a>
             
              <a href="#" class="header__action">
               <svg class="header__action-icon">
-                <use href="/src/assets/icons/icons.svg#icon-instagram"></use>
+                <use href="./assets/icons/icons.svg#icon-instagram"></use>
               </svg>
             </a>
           </div>
           <a href="/src/index.html" class="header__logo">
-            <img src="/src/assets/icons/logo.png" class="header__logo-icon" alt="logo" />
+            <img src="./assets/icons/logo.png" class="header__logo-icon" alt="logo" />
             <div class="header__logo-text">BEST SHOP</div>
           </a>
           <div class="header__controls">
             <div id="login-user" class="header__action">
               <svg class="header__action-icon header__action-icon--lg">
-                <use href="/src/assets/icons/icons.svg#icon-user"></use>
+                <use href="./assets/icons/icons.svg#icon-user"></use>
               </svg>
             </div>
-            <a href="/src/html/cart.html" class="header__action">
+            <a href="./cart.html" class="header__action">
             ${totalQuantityValue >= 1 ? `<span class="header__cart-icon">${totalQuantityValue}</span>` : ``}
               <svg class="header__action-icon header__action-icon--lg">
-                <use href="/src/assets/icons/icons.svg#icon-cart"></use>
+                <use href="./assets/icons/icons.svg#icon-cart"></use>
               </svg>
             </a>
             </div>
@@ -63,17 +63,17 @@ export function renderHeader(): void {
                 <a href="/src/index.html" class="nav__item-link">Home</a>
               </li>
               <li class="nav__item">
-                <a href="/src/html/catalog.html" class="nav__item-link"
+                <a href="./catalog.html" class="nav__item-link"
                   >Catalog</a
                 >
               </li>
               <li class="nav__item">
-                <a href="/src/html/about.html" class="nav__item-link"
+                <a href="./about.html" class="nav__item-link"
                   >About Us</a
                 >
               </li>
               <li class="nav__item">
-                <a href="/src/html/contact.html" class="nav__item-link"
+                <a href="./contact.html" class="nav__item-link"
                   >Contact Us</a
                 >
               </li>
@@ -86,7 +86,7 @@ export function renderHeader(): void {
         <div id="modal" class="modal modal--hidden">
         <form id="login-form"class="modal__content">
          <svg id="icon-close" class="modal__icon modal__icon--close">
-                <use href="/src/assets/icons/icons.svg#icon-close"></use>
+                <use href="./assets/icons/icons.svg#icon-close"></use>
               </svg>
           <div class="modal__field">
             <label for="login" class="modal__label modal__label--required">
@@ -102,7 +102,7 @@ export function renderHeader(): void {
             </label>
             <div class="modal__input-field">
             <svg id="password-icon" class="modal__icon">
-                <use href="/src/assets/icons/icons.svg#icon-password"></use>
+                <use href="./assets/icons/icons.svg#icon-password"></use>
               </svg>
             <input
               type="password"

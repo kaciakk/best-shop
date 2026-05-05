@@ -53,7 +53,7 @@ function searchProduct(products, value) {
         return item.name.toLowerCase().trim().includes(searchValue);
     });
     if (currentSearch) {
-        window.location.href = `/src/html/product-card.html?id=${currentSearch.id}`;
+        window.location.href = `./product-card.html?id=${currentSearch.id}`;
     }
     else {
         alert("Product not found");

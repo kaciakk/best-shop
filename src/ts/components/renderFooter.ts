@@ -6,7 +6,7 @@ export function renderFooter(): void {
         <div class="footer__content">
           <div class="footer__about">
             <h5 class="text-title text-title--xs text-title--bold footer__title">
-            <a href="/src/html/about.html">
+            <a href="./about.html">
             About Us </a>
             </h5>
             <ul class="footer__items">
@@ -43,7 +43,7 @@ export function renderFooter(): void {
           </div>
           <div class="footer__contact">
           <h5 class="text-title text-title--xs text-title--bold footer__title">
-            <a href="/src/html/contact.html" class="footer__title">
+            <a href="./contact.html" class="footer__title">
             Contact Us</a>
             </h5>
         
@@ -57,13 +57,13 @@ export function renderFooter(): void {
           <div class="footer__information-area1">
               <div class="footer__item">
                 <svg class="footer__icon">
-                  <use href="/src/assets/icons/icons.svg#icon-phone"></use>
+                  <use href="./assets/icons/icons.svg#icon-phone"></use>
                 </svg>
                 <span class="text-body text-body--xs">Phone: (+63) 236 6322</span>
               </div>
               <div class="footer__item">
                 <svg class="footer__icon">
-                  <use href="/src/assets/icons/icons.svg#icon-clock"></use>
+                  <use href="./assets/icons/icons.svg#icon-clock"></use>
                 </svg>
                 <div class="footer__info">
                   <span class="text-body text-body--xs">Mon - Fri: 10am - 6pm</span>
@@ -75,13 +75,13 @@ export function renderFooter(): void {
            
               <div class="footer__item">
                 <svg class="footer__icon">
-                  <use href="/src/assets/icons/icons.svg#icon-mail"></use>
+                  <use href="./assets/icons/icons.svg#icon-mail"></use>
                 </svg>
                 <span class="text-body text-body--xs">public@news.com</span>
               </div>
               <div class="footer__item">
                 <svg class="footer__icon">
-                  <use href="/src/assets/icons/icons.svg#icon-address"></use>
+                  <use href="./assets/icons/icons.svg#icon-address"></use>
                 </svg>
                 <div class="footer__info">
                   <span class="text-body text-body--xs">639 Jade Valley,</span>

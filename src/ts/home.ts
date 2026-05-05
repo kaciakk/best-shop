@@ -71,7 +71,7 @@ newArrivalsProducts?.addEventListener("click", (e) => {
 
   if (!buttonId) return;
 
-  window.location.href = `/src/html/product-card.html?id=${buttonId}`;
+  window.location.href = `./product-card.html?id=${buttonId}`;
 });
 
 const track = document.querySelector(".travel-products__track");

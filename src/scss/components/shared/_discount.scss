@@ -7,7 +7,7 @@
     @include grid(2);
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.4)),
-      url("/src/assets/Homepage/discount-banner.png");
+      url("./assets/Homepage/discount-banner.png");
     @include bg-cover;
     width: 100%;
     padding: 4rem 1rem;

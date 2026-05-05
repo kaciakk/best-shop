@@ -4,7 +4,7 @@
 .hero-contact {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/src/assets/Contact/banner-image.jpg");
+    url("./assets/Contact/banner-image.jpg");
 
   @include bg-cover;
 

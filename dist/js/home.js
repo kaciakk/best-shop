@@ -60,7 +60,7 @@ newArrivalsProducts === null || newArrivalsProducts === void 0 ? void 0 : newArr
     const buttonId = button.dataset.id;
     if (!buttonId)
         return;
-    window.location.href = `/src/html/product-card.html?id=${buttonId}`;
+    window.location.href = `./product-card.html?id=${buttonId}`;
 });
 const track = document.querySelector(".travel-products__track");
 const tiles = document.querySelectorAll(".travel-products__tile");
