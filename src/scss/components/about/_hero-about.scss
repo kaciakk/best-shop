@@ -4,7 +4,7 @@
 .hero-about {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("./assets/About/banner-about.jpg");
+    url("../assets/About/banner-about.jpg");
 
   @include bg-cover;
 

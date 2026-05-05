@@ -31,7 +31,7 @@
 
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url("./assets/Homepage/suitcase-real-live.png");
+      url("../assets/Homepage/suitcase-real-live.png");
 
     @include bg-cover;
 
@@ -50,31 +50,31 @@
     &--2 {
       background-image:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url("./assets/Homepage/suitcase-real-live-1.png");
+        url("../assets/Homepage/suitcase-real-live-1.png");
     }
 
     &--3 {
       background-image:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url("./assets/Homepage/suitcase-real-live-2.png");
+        url("../assets/Homepage/suitcase-real-live-2.png");
     }
 
     &--4 {
       background-image:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url("./assets/Homepage/suitcase-real-live-3.png");
+        url("../assets/Homepage/suitcase-real-live-3.png");
     }
 
     &--5 {
       background-image:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url("./assets/Homepage/suitcase-real-live.png");
+        url("../assets/Homepage/suitcase-real-live.png");
     }
 
     &--6 {
       background-image:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url("./assets/Homepage/suitcase-real-live-1.png");
+        url("../assets/Homepage/suitcase-real-live-1.png");
     }
 
     &:hover {
