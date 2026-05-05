@@ -7,7 +7,7 @@
     "build": "npm run clean && npm run copy && npm run scss-build && npm run ts-compile",
     "vercel-build": "npm run build",
     "clean": "shx rm -rf dist",
-    "copy": "shx mkdir -p dist && shx cp -r src/html/* dist/ && shx cp -r src/assets dist/assets",
+    "copy": "shx mkdir -p dist && shx cp index.html dist/index.html && shx cp -r src/html/* dist/ && shx cp -r src/assets dist/assets",
     "scss-build": "sass src/scss:dist/css",
     "ts-compile": "tsc || echo \"TypeScript errors ignored for deploy\"",
     "ts": "tsc --watch",
