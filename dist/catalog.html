@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script type="module" src="/dist/js/catalog.js"></script>
-    <link rel="stylesheet" href="/dist/css/main.css" />
+    <script type="module" src="./js/catalog.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
     <header id="header" class="header"></header>
@@ -20,7 +20,7 @@
                 class="search-bar__input-field search-bar__input-field--sorting"
               >
                 <svg id="filter-icon" class="search-bar__filter-icon">
-                  <use href="/src/assets/icons/icons.svg#icon-filter"></use>
+                  <use href="./assets/icons/icons.svg#icon-filter"></use>
                 </svg>
                 <select id="select-sort" class="select search-bar__input">
                   <option value="default">Default Sorting</option>
@@ -31,9 +31,10 @@
                 </select>
               </div>
             </div>
+
             <div class="search-bar__input-field">
               <svg class="search-bar__icon">
-                <use href="/src/assets/icons/icons.svg#icon-search"></use>
+                <use href="./assets/icons/icons.svg#icon-search"></use>
               </svg>
               <input
                 id="search-input"
@@ -44,6 +45,7 @@
           </div>
         </div>
       </section>
+
       <section id="filter" class="filter filter__hide">
         <div class="container">
           <div class="filter__content">
@@ -64,9 +66,10 @@
                   <option value="SMXL">S, M, XL</option>
                 </select>
               </div>
+
               <div class="filter__select">
                 <label
-                  for="size"
+                  for="color"
                   class="text-body text-body--sm text-body--bold text-body--secondary"
                   >Color</label
                 >
@@ -81,9 +84,10 @@
                   <option value="pink">Pink</option>
                 </select>
               </div>
+
               <div class="filter__select">
                 <label
-                  for="size"
+                  for="category"
                   class="text-body text-body--sm text-body--bold text-body--secondary"
                   >Category</label
                 >
@@ -95,6 +99,7 @@
                   <option value="kids' luggage">Kids' luggage</option>
                 </select>
               </div>
+
               <div class="filter__select">
                 <label
                   for="sales"
@@ -108,7 +113,6 @@
                     name="sales"
                     id="sales"
                     value="sales"
-                    switch
                   />
                 </div>
               </div>
@@ -121,6 +125,7 @@
           </div>
         </div>
       </section>
+
       <section class="catalog">
         <div class="container">
           <div class="catalog__content">
@@ -132,6 +137,7 @@
           </div>
         </div>
       </section>
+
       <section class="pagination">
         <div class="container">
           <div class="pagination__content">
@@ -146,6 +152,7 @@
               </button>
 
               <div id="buttons-pages" class="pagination__pages"></div>
+
               <button id="button-next-page" class="button button--pagination">
                 <span class="text-body text-body--xs text-body--bold"
                   >Next</span
@@ -158,8 +165,10 @@
           </div>
         </div>
       </section>
+
       <section id="benefits" class="benefits"></section>
     </main>
+
     <footer id="footer" class="footer"></footer>
   </body>
 </html>

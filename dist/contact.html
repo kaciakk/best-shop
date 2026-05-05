@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script type="module" src="/dist/js/contact.js"></script>
-    <link rel="stylesheet" href="/dist/css/main.css" />
+    <script type="module" src="./js/contact.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
     <header id="header" class="header"></header>
@@ -27,12 +27,13 @@
           </div>
         </div>
       </section>
+
       <section class="information">
         <div class="container">
           <div class="information__content">
             <div class="information__tile">
               <svg class="information__icon">
-                <use href="/src/assets/icons/icons.svg#icon-address"></use>
+                <use href="./assets/icons/icons.svg#icon-address"></use>
               </svg>
               <h5 class="text-title text-title--md text-title--bold">
                 Our Location
@@ -46,9 +47,10 @@
                 >
               </div>
             </div>
+
             <div class="information__tile">
               <svg class="information__icon">
-                <use href="/src/assets/icons/icons.svg#icon-clock"></use>
+                <use href="./assets/icons/icons.svg#icon-clock"></use>
               </svg>
               <h5 class="text-title text-title--md text-title--bold">
                 Operating Time
@@ -57,27 +59,28 @@
                 <span class="text-body text-body--sm">
                   Monday - Friday: 9am - 6 pm
                 </span>
-                <span class="text-body text-body--sm"
-                  >Weekends: 10:30 am - 6pm</span
-                >
+                <span class="text-body text-body--sm">
+                  Weekends: 10:30 am - 6pm
+                </span>
               </div>
             </div>
+
             <div class="information__tile">
               <svg class="information__icon">
-                <use href="/src/assets/icons/icons.svg#icon-mail"></use>
+                <use href="./assets/icons/icons.svg#icon-mail"></use>
               </svg>
               <h5 class="text-title text-title--md text-title--bold">
                 Our Email
               </h5>
               <div class="information__description">
                 <span class="text-body text-body--sm">best@shop.com</span>
-                <span class="text-body text-body--sm">info@bestshop.com </span>
+                <span class="text-body text-body--sm">info@bestshop.com</span>
               </div>
             </div>
 
             <div class="information__tile">
               <svg class="information__icon">
-                <use href="/src/assets/icons/icons.svg#icon-phone"></use>
+                <use href="./assets/icons/icons.svg#icon-phone"></use>
               </svg>
               <h5 class="text-title text-title--md text-title--bold">
                 Call Us
@@ -90,42 +93,44 @@
           </div>
         </div>
       </section>
+
       <section class="feedback">
         <div class="container">
           <div class="feedback__content">
             <div class="feedback__left">
               <div class="feedback__image">
-                <img
-                  alt="feedback"
-                  src="../assets/Contact/feedback-image.jpg"
-                />
+                <img alt="feedback" src="./assets/Contact/feedback-image.jpg" />
               </div>
             </div>
+
             <div class="feedback__right">
               <div class="feedback__title">
                 <h4 class="text-title text-title--lg">
                   Your Feedback Is Much Appreciated!
                 </h4>
-                <span class="text-body text-body--sm"
-                  >We will contact you when you complete the following
-                  form!</span
-                >
+                <span class="text-body text-body--sm">
+                  We will contact you when you complete the following form!
+                </span>
               </div>
+
               <form id="contact-form" class="feedback__form">
                 <div class="feedback__form-item">
                   <label
-                    for="name"
+                    for="name-contact"
                     class="text-title text-title--sm text-title--bold feedback__is-required"
-                    >Your Name</label
                   >
+                    Your Name
+                  </label>
                   <input type="text" id="name-contact" class="input" required />
                 </div>
+
                 <div class="feedback__form-item">
                   <label
-                    for="email"
+                    for="email-contact"
                     class="text-title text-title--sm text-title--bold feedback__is-required"
-                    >Your Email Address</label
                   >
+                    Your Email Address
+                  </label>
                   <input
                     type="email"
                     id="email-contact"
@@ -133,12 +138,14 @@
                     required
                   />
                 </div>
+
                 <div class="feedback__form-item">
                   <label
-                    for="topic"
+                    for="topic-contact"
                     class="text-title text-title--sm text-title--bold feedback__is-required"
-                    >Topic</label
                   >
+                    Topic
+                  </label>
                   <input
                     type="text"
                     id="topic-contact"
@@ -146,12 +153,14 @@
                     required
                   />
                 </div>
+
                 <div class="feedback__form-item">
                   <label
-                    for="message"
+                    for="message-contact"
                     class="text-title text-title--sm text-title--bold feedback__is-required"
-                    >Your Message</label
                   >
+                    Your Message
+                  </label>
                   <textarea
                     id="message-contact"
                     form="contact-form"
@@ -173,8 +182,10 @@
           </div>
         </div>
       </section>
+
       <section id="benefits" class="benefits"></section>
     </main>
+
     <footer id="footer" class="footer"></footer>
   </body>
 </html>
