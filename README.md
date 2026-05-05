@@ -1,6 +1,6 @@
 # 🧳 Best Shop – E-commerce Frontend
 
-🔗 **Live Demo:** https://bestshopkaciak.netlify.app/
+🔗 **Live Demo:** https://best-shop-kaciak.netlify.app/
 
 ---
 
