@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./js/product-card.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header id="header" class="header"></header>
+    <main>
+      <section class="product-card">
+        <div class="container">
+          <div id="product-content" class="product-card__content"></div>
+        </div>
+      </section>
+
+      <section class="informations">
+        <div class="container">
+          <div class="informations__content">
+            <div class="informations__navigation">
+              <button
+                id="button-details"
+                class="button button--details text-body text-body--sm text-body--bold"
+              >
+                DETAILS
+              </button>
+              <button
+                id="button-reviews"
+                class="button button--details text-body text-body--sm text-body--bold"
+              >
+                REVIEWS
+              </button>
+              <button
+                id="button-shipping"
+                class="button button--details text-body text-body--sm text-body--bold"
+              >
+                SHIPPING POLICY
+              </button>
+            </div>
+
+            <div id="informations" class="informations__description">
+              <p class="text-body text-body--sm text-body--secondary">
+                Vestibulum commodo sapien non elit porttitor, vitae volutpat
+                nibh mollis. Nulla porta risus id neque tempor, in efficitur
+                justo imperdiet. Etiam a ex at ante tincidunt imperdiet. Nunc
+                congue ex vel nisl viverra, sit amet aliquet lectus ullamcorper.
+                Praesent luctus lacus non lorem elementum, eu tristique sapien
+                suscipit. Sed bibendum, ipsum nec viverra malesuada, erat nisi
+                sodales purus, eget hendrerit dui ligula eu enim. Ut non est
+                nisi. Pellentesque tristique pretium dolor eu commodo. Proin
+                iaculis nibh vitae lectus mollis bibendum. Quisque varius eget
+                urna sit amet luctus. Suspendisse potenti. Curabitur ac placerat
+                est, sit amet sodales risus. Pellentesque viverra dui auctor,
+                ullamcorper turpis pharetra, facilisis quam.
+              </p>
+
+              <p class="text-body text-body--sm text-body--secondary">
+                Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius
+                eget urna sit amet luctus. Suspendisse potenti. Curabitur ac
+                placerat est, sit amet sodales risus. Pellentesque viverra dui
+                auctor, ullamcorper turpis pharetra, facilisis quam. Proin
+                iaculis nibh vitae lectus mollis bibendum.
+              </p>
+
+              <p class="text-body text-body--sm text-body--secondary">
+                Quisque varius eget urna sit amet luctus. Suspendisse potenti.
+                Curabitur ac placerat est, sit amet sodales risus. Pellentesque
+                viverra dui auctor, ullamcorper turpis pharetra, facilisis quam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="prefer-list">
+        <div class="container">
+          <div class="prefer-list__content">
+            <h2
+              class="text-title text-title--lg text-title--bold prefer-list__title"
+            >
+              You May Also Like
+            </h2>
+            <div id="prefer-list" class="prefer-list__items"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="benefits" class="benefits"></section>
+    </main>
+
+    <footer id="footer" class="footer"></footer>
+  </body>
+</html>
