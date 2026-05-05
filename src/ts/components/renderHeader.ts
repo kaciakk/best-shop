@@ -32,7 +32,7 @@ export function renderHeader(): void {
             
              <a href="#" class="header__action">
               <svg class="header__action-icon">
-                <use href="./assets/icons/icons.svg#icon-instagram"></use>
+                <use href="./assets/Icons/icons.svg#icon-instagram"></use>
               </svg>
             </a>
           </div>
@@ -43,7 +43,7 @@ export function renderHeader(): void {
           <div class="header__controls">
             <div id="login-user" class="header__action">
               <svg class="header__action-icon header__action-icon--lg">
-                <use href="./assets/icons/icons.svg#icon-user"></use>
+                <use href="./assets/Icons/icons.svg#icon-user"></use>
               </svg>
             </div>
             <a href="./cart.html" class="header__action">
