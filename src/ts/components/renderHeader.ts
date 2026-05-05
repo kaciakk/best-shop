@@ -36,8 +36,8 @@ export function renderHeader(): void {
               </svg>
             </a>
           </div>
-          <a href="/src/index.html" class="header__logo">
-            <img src="./assets/icons/logo.png" class="header__logo-icon" alt="logo" />
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/Icons/logo.png" class="header__logo-icon" alt="logo" />
             <div class="header__logo-text">BEST SHOP</div>
           </a>
           <div class="header__controls">
@@ -60,7 +60,7 @@ export function renderHeader(): void {
            <div class="nav__burger" id="burger">☰</div>
             <ul id="nav-list" class="nav__list">
               <li class="nav__item">
-                <a href="/src/index.html" class="nav__item-link">Home</a>
+                <a href="./index.html" class="nav__item-link">Home</a>
               </li>
               <li class="nav__item">
                 <a href="./catalog.html" class="nav__item-link"
